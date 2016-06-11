@@ -1,5 +1,48 @@
+
 body {
   margin: 0;
 }
 
 @import 'common/greating';
+@import "block-info";
+
+
+@media all and (min-width: 768px) and (min-height: 1024px){
+  .block{
+    margin-top: 275px;
+  }
+}
+
+@media all and  (min-width: 1200px){
+  .block{
+    margin-top: 143px;
+  }
+  .mountains{
+    max-height: 148px;
+      img{
+        width:115%;
+      }
+  }
+  .login{
+    right:20px;
+  }
+}
+@media all and (min-width: 1800px){
+  .block{
+    margin-top: 248px;
+  }
+  .mountains{
+    max-height: 270px;
+  }
+}
+@media all and (min-width: 320px) {
+  body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content:center;
+  }
+}
+.linked-in{
+  fill: #7DBD39;
+}
