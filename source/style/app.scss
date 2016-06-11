@@ -1,4 +1,3 @@
-
 body {
   margin: 0;
 }
@@ -44,5 +43,23 @@ body {
   }
 }
 .linked-in{
-  fill: #7DBD39;
+  fill: #004cd1;
+}
+.github-svg{
+  fill: #004cd1;
+}
+.vk-svg{
+  fill: #004cd1;
+}
+
+.social a:hover {
+  .linked-in {
+    fill: #FFF;
+  }
+  .vk-svg {
+    fill: #FFF
+  }
+  .github-svg {
+    fill: #FFF
+  }
 }
