@@ -1,11 +1,18 @@
+$lightblue: rgba(0, 76, 209, 0.7);
+$blue: rgb(0, 76, 209);
 body {
   margin: 0;
   font-family: 'Roboto', sans-serif;
 }
+ul{
+  margin: 0;
+  padding: 0;
+}
 
-@import 'common/mountains-welcome';
-@import "block-info";
-
+@import 'common/mountains-welcome.scss';
+@import "block-info.scss";
+@import 'block-login';
+@import "about";
 
 @media all and (min-width: 768px) and (min-height: 1024px){
   .block{
@@ -44,23 +51,11 @@ body {
   }
 }
 .linked-in{
-  fill: #004cd1;
+  fill: $lightblue;
 }
 .github-svg{
-  fill: #004cd1;
+  fill: $lightblue;
 }
 .vk-svg{
-  fill: #004cd1;
-}
-
-.social a:hover {
-  .linked-in {
-    fill: #FFF;
-  }
-  .vk-svg {
-    fill: #FFF
-  }
-  .github-svg {
-    fill: #FFF
-  }
+  fill: $lightblue;
 }

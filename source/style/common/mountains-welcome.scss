@@ -16,6 +16,7 @@ $img : "../img";
   z-index: -9999;
 }
 .login{
+  cursor: pointer;
   background: transparent;
   border: 1px solid white;
   position: absolute;
@@ -25,9 +26,13 @@ $img : "../img";
   width:180px;
   color: white;
   text-align: center;
+  transition-duration: 200ms;
     span{
       line-height: 45px;
     }
+  &:hover{
+    background-color: $blue;
+  }
 }
 
 .mountains{

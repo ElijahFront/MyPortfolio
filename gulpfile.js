@@ -29,9 +29,9 @@ $.gulp.task('default', $.gulp.series(
     'js.process',
     'copy.image',
     'css.foundation', 
-    'sprites'
+    'sprites',
+    'fonts'
   ),
-    'concatCSS',
   $.gulp.parallel(
     'watch',
     'serve'

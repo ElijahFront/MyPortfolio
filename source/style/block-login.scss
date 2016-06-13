@@ -24,6 +24,7 @@ $btn-dark: #083c96;
   }
 
   .inp {
+    display: block;
     position: relative;
     width: 295px;
     height: 45px;
@@ -110,6 +111,7 @@ $btn-dark: #083c96;
   }
   .btn-main {
     border-right: 2px solid rgba(222, 227, 231, 0.5);
+    width:187px;
   }
   .nav-log {
     position: absolute;

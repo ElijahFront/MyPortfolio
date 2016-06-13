@@ -7,10 +7,13 @@ html
     <![endif]-->
 
     div.overlay
-      video.video#video(width="100%" height="auto" autoplay="autoplay" loop="loop" preload="auto")
-        source(src="assets/img/night.mp4")
-      div.mountains
-        img(src="assets/img/mountains.png")
+      ul#scene
+        li.layer(data-depth='0')
+          video.video#video(width="100%" height="auto" autoplay="autoplay" loop="loop" preload="auto")
+            source(src="assets/img/night.mp4")
+        li.layer(data-depth='0.9')
+          div.mountains
+            img(src="assets/img/mountains.png")
 
     div.login#log
       span Авторизоваться
@@ -78,12 +81,9 @@ html
           </svg>
 
       div.nav
-        a(href="#")
-          div.btn.my-work Мои работы
-        a(href="#")
-          div.btn.about-me Обо мне
-        a(href="#")
-          div.btn.blog Блог
+        a(href="#", class='btn my-work') Мои работы
+        a(href="About.html", class='btn about-me ') Обо мне
+        a(href="#", class='btn blog ') Блог
 
     .block-login
       h1 Авторизуйтесь
@@ -98,8 +98,15 @@ html
         input(type='radio', class='not-robot no' id='n-rob')
         label(for='n-rob') Не уверен
       .nav-log
-        .btn-log.btn-main На главную
-        .btn-log.btn-enter Войти
+        a.btn-log.btn-main(href='index.html') На главную
+        a.btn-log.btn-enter(href='#') Войти
 
     div.copy
       span.copyright © Илья Сметанин | создано с любовью в LoftSchool | 2016
+
+    //
+      script(src='./assets/js/parallax.min.js')
+      script.
+
+        var scene = document.getElementById('scene');
+        var parallax = new Parallax(scene);

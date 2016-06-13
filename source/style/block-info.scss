@@ -57,6 +57,20 @@
     a{
       display: inline-block;
       max-height: 22px;
+      &:hover {
+        .linked-in {
+          transition-duration: 189ms;
+          fill: rgb(0, 76, 209);
+        }
+        .vk-svg {
+          transition-duration: 189ms;
+          fill: rgb(0, 76, 209);
+        }
+        .github-svg {
+          transition-duration: 189ms;
+          fill: rgb(0, 76, 209);
+        }
+      }
         img{
           width:100%;
         }
@@ -68,6 +82,7 @@
   top:100%;
   transform: translateY(-100%);
   .btn{
+    text-decoration: none;
     height:45px;
     background-color: rgba(0, 76, 209, 0.85);
     color: white;
@@ -79,18 +94,19 @@
     padding-left: 31px;
     padding-right: 30px;
     border-right: 2px solid rgba(222, 227, 231, 0.5);
+    transition-duration: 189ms;
   }
-  a:last-of-type .btn{
-    border:none;
-  }
-  .blog{
-    padding-left:32px;
-  }
-  .about-me{
-    padding-left: 32px;
-  }
+    .btn:last-of-type {
+      border:none;
+    }
+    .blog{
+      padding-left:32px;
+    }
+    .about-me{
+      padding-left: 32px;
+    }
 
-  .btn:hover{
-    background-color: rgba(4, 62, 163, 0.85);
-  }
+    .btn:hover{
+      background-color: rgba(4, 62, 163, 0.85);
+    }
 }
