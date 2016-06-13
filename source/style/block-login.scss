@@ -1,0 +1,120 @@
+$blue-btn: #004cd1;
+$btn-dark: #083c96;
+.block-login {
+  box-sizing: border-box;
+  margin-top: 143px;
+  width: 380px;
+  height: 407px;
+  background-color: rgba(28, 31, 41, 0.5);
+  margin-left: auto;
+  margin-right: auto;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 36px;
+  position: relative;
+  h1 {
+    margin: 0;
+    color: white;
+    font-family: SansusWebissimo, sans-serif;
+    font-size: 35px;
+    font-weight: 400;
+    line-height: 41px;
+    text-transform: uppercase;
+  }
+
+  .inp {
+    position: relative;
+    width: 295px;
+    height: 45px;
+    background-color: white;
+    opacity: 0.5;
+    color: #373e42;
+    font-family: Roboto, sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    &:before {
+      content: 'ghjn';
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      //  left:-45px;
+      width: 45px;
+      height: 45px;
+      background-color: #f0efe9;
+    }
+
+  }
+  .input-log {
+    margin-top: 40px;
+    margin-bottom: 20px;
+    &:before {
+      background-image: url('../img/login.svg');
+    }
+  }
+  .input-password {
+    margin-bottom: 20px;
+    &:before {
+      background-image: url('../img/password.svg');
+    }
+  }
+  .human {
+    display: block;
+    width: 20px;
+    height: 20px;
+    background-color: #0548be;
+  }
+  .human:checked {
+    background-image: url("../img/check.svg");
+  }
+  label {
+    color: white;
+    font-family: Roboto;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+  }
+  .sure {
+    display: inline-block;
+    margin-top: 20px;
+    color: white;
+    font-family: Roboto;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 24px;
+  }
+  .not-robot {
+    width: 20px;
+    height: 20px;
+    background-color: white;
+  }
+  .not-robot:checked {
+    background-image: url('../img/ellipse-blue.png');
+  }
+  .btn-log {
+    display: inline-block;
+    width: 189px;
+    height: 45px;
+    background-color: $blue-btn;
+    color: white;
+    font-family: Roboto;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 45px;
+    text-decoration: none;
+    text-align: center;
+  }
+  .btn-log:hover {
+    background-color: $btn-dark;
+  }
+  .btn-main {
+    border-right: 2px solid rgba(222, 227, 231, 0.5);
+  }
+  .nav-log {
+    position: absolute;
+    top: 100%;
+    transform: translateY(-100%);
+    transition-duration: 300ms;
+  }
+}

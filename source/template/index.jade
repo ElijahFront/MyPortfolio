@@ -12,11 +12,10 @@ html
       div.mountains
         img(src="assets/img/mountains.png")
 
-    a(href="#", class="log")
-      div.login
-        span Авторизоваться
+    div.login#log
+      span Авторизоваться
 
-    div.block
+    div.block#bl
       div.icon-logo
         img(src="assets/img/ava-crop.jpeg")
       div.text
@@ -85,6 +84,22 @@ html
           div.btn.about-me Обо мне
         a(href="#")
           div.btn.blog Блог
+
+    .block-login
+      h1 Авторизуйтесь
+      input(type='text', class='inp input-log')
+      input(type='text', class='inp input-password')
+      input(type='checkbox', class='human' id='human')
+      label(for='human') Я человек
+      span.sure Вы точно не робот?
+      form
+        input(type='radio', class='not-robot yes' id='y-rob')
+        label(for='y-rob') Да
+        input(type='radio', class='not-robot no' id='n-rob')
+        label(for='n-rob') Не уверен
+      .nav-log
+        .btn-log.btn-main На главную
+        .btn-log.btn-enter Войти
 
     div.copy
       span.copyright © Илья Сметанин | создано с любовью в LoftSchool | 2016

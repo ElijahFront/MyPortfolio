@@ -1,8 +1,9 @@
 body {
   margin: 0;
+  font-family: 'Roboto', sans-serif;
 }
 
-@import 'common/greating';
+@import 'common/mountains-welcome';
 @import "block-info";
 
 
@@ -13,7 +14,7 @@ body {
 }
 
 @media all and  (min-width: 1200px){
-  .block{
+  .block, .block-login{
     margin-top: 143px;
   }
   .mountains{
@@ -34,12 +35,12 @@ body {
     max-height: 270px;
   }
 }
-@media all and (min-width: 320px) {
-  body{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content:center;
+@media all and (max-width: 320px) {
+  .log{
+    position: absolute;
+    left:50%;
+    top:10px;
+    transform: translateX(-100%);
   }
 }
 .linked-in{
