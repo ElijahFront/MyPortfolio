@@ -85,58 +85,60 @@ html
 
             h1 Мои работы
 
-    section.work-description
-        .info
-            h2.name Сайт школы онлайн образования
-            span.used-technologies HTML5, CSS3, JavaScript
-            a.visit-site(href='#') Посмотреть сайт
+    .wrapper
+        section.work-description
+            .info
+                h2.name Сайт школы онлайн образования
+                span.used-technologies HTML5, CSS3, JavaScript
+                a.visit-site(href='#') Посмотреть сайт
 
-    section.sites-pictures
-        ul
-            li
-            li
-            li
-            li
-        .move-btn.btn-up
-            img(src='#')
-        .move-btn.btn-down
-            img(src='#')
+        section.sites-pictures
+            ul
+                li
+                li
+                li
+                li
+            .move-btn.btn-up
+                img(src='#')
+            .move-btn.btn-down
+                img(src='#')
 
     section.gossips
         h1 Что обо мне говорят
         .opinions-wrappwer
             .opinion.Dima
                 .logo
-                    img(src='#')
+                    img(src='./assets/img/Dima.png')
                 blockquote.opinion-text.
                     Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool!
                      2 месяца только самых тяжелых испытаний и бессонных ночей!
                 .author
-                    p.
+                    p
                         span Ковальчук Дмитрий
-                        — основатель Loftschool
+                        |— основатель Loftschool
+
 
             .opinion.Zar
                 .logo
-                    img(src='#')
+                    img(src='./assets/img/Zar.png')
                 blockquote.opinion-text.
                     Этот код выдержет любые испытания. Только пожалуйста, не загружается сайт на слишком старых браузерах!
                 .author
-                    p.
+                    p
                         span Зар Захаров
-                        — главный преподаватель
+                        |— главный преподаватель
         .feedback
             h3 Связаться со мной
             form
-                input.inputs.name
-                input.inputs.mail
-                input.message
+                input.inputs.name(type='text', placeholder='Ваше имя')
+                input.inputs.mail(type='text', placeholder='Ваш email')
+                textarea(placeholder='Ваше сообщение')
+                input.submit-btn(type='submit')
 
-                .nav-buttons
-                    a.send(href='#')
-                    a.clear(href='#')
+            .nav-buttons
+                a.clear(href='#') Очистить
 
-                    .arrow.arrow-up.
+            .arrow.arrow-up.
 
                             <?xml version="1.0" encoding="utf-8"?>
                             <!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
