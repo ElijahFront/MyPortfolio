@@ -10,9 +10,11 @@ ul{
 }
 
 @import 'common/mountains-welcome.scss';
+@import "common/footer.scss";
 @import "block-info.scss";
 @import 'block-login';
 @import "about";
+@import "works";
 
 @media all and (min-width: 768px) and (min-height: 1024px){
   .block{

@@ -22,28 +22,36 @@ $btn-dark: #083c96;
     line-height: 41px;
     text-transform: uppercase;
   }
-
+.human{
+  display: inline-block;
+  position: relative;
+}
+  .labkhum{
+    display: inline-block;
+    position: absolute;
+    top:0;
+    left:0;
+  }
   .inp {
     display: block;
     position: relative;
     width: 295px;
     height: 45px;
     background-color: white;
-    opacity: 0.5;
     color: #373e42;
     font-family: Roboto, sans-serif;
     font-size: 16px;
     font-weight: 400;
-    &:before {
-      content: 'ghjn';
-      display: block;
-      position: absolute;
-      top: 0;
-      left: 0;
-      //  left:-45px;
-      width: 45px;
-      height: 45px;
-      background-color: #f0efe9;
+      &:before {
+        content: 'ghjn';
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        //  left:-45px;
+        width: 45px;
+        height: 45px;
+        background-color: #f0efe9;
     }
 
   }

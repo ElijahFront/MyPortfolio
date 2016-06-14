@@ -81,16 +81,16 @@ html
           </svg>
 
       div.nav
-        a(href="#", class='btn my-work') Мои работы
+        a(href="Works.html", class='btn my-work') Мои работы
         a(href="About.html", class='btn about-me ') Обо мне
         a(href="#", class='btn blog ') Блог
 
     .block-login
       h1 Авторизуйтесь
-      input(type='text', class='inp input-log')
-      input(type='text', class='inp input-password')
+      input(type='text', class='inp input-log', placeholder='Логин')
+      input(type='text', class='inp input-password', placeholder='Пароль')
       input(type='checkbox', class='human' id='human')
-      label(for='human') Я человек
+      label(for='human', class='lablhum') Я человек
       span.sure Вы точно не робот?
       form
         input(type='radio', class='not-robot yes' id='y-rob')
