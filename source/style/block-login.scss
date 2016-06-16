@@ -1,6 +1,7 @@
 $blue-btn: #004cd1;
 $btn-dark: #083c96;
 .block-login {
+  color: #FFFFFF;
   box-sizing: border-box;
   margin-top: 143px;
   width: 380px;
@@ -22,9 +23,13 @@ $btn-dark: #083c96;
     line-height: 41px;
     text-transform: uppercase;
   }
-.human{
-  display: inline-block;
-  position: relative;
+  .human-check {
+    display: inline-block;
+    position: relative;
+  }
+}
+.human-check{
+  margin-right: 10px;
 }
   .labkhum{
     display: inline-block;
@@ -33,8 +38,11 @@ $btn-dark: #083c96;
     left:0;
   }
   .inp {
+    margin: 0 auto;
+    border:none;
+    box-sizing: border-box;
+    padding-left: 63px;
     display: block;
-    position: relative;
     width: 295px;
     height: 45px;
     background-color: white;
@@ -42,21 +50,57 @@ $btn-dark: #083c96;
     font-family: Roboto, sans-serif;
     font-size: 16px;
     font-weight: 400;
-      &:before {
-        content: 'ghjn';
-        display: block;
-        position: absolute;
-        top: 0;
-        left: 0;
-        //  left:-45px;
-        width: 45px;
-        height: 45px;
-        background-color: #f0efe9;
+
+    &:-moz-placeholder{
+      opacity: 0.5;
+      color: #373e42;
+      font-family: Roboto,sans-serif;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 99px;
+    }
+    &:-ms-input-placeholder{
+      opacity: 0.5;
+      color: #373e42;
+      font-family: Roboto,sans-serif;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 99px;
+    }
+    &::-webkit-input-placeholder{
+      opacity: 0.5;
+      color: #373e42;
+      font-family: Roboto,sans-serif;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 99px;
     }
 
   }
-  .input-log {
+  .input-wrapper{
+    position: relative;
+  }
+  .input-wrapper:before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    //  left:-45px;
+    width: 45px;
+    height: 45px;
+  }
+  .input-wrapper-login:before{
+    background: url("../img/login.svg") center no-repeat;
+  }
+  .input-wrapper-password:before{
+    background: url("../img/password.svg") center no-repeat;
+  }
+  .login__form{
+    text-align: center;
     margin-top: 40px;
+  }
+  .input-log {
     margin-bottom: 20px;
     &:before {
       background-image: url('../img/login.svg');
@@ -84,6 +128,18 @@ $btn-dark: #083c96;
     font-weight: 400;
     line-height: 24px;
   }
+  .login__form_label{
+    display: block;
+  }
+.login__form_label-check{
+  margin-bottom: 19px;
+}
+.login__form_label-sure, .login__form_label-not-sure{
+  display: inline-block;
+}
+  .login__sure_wrapper{
+    margin-top: 10px;
+  }
   .sure {
     display: inline-block;
     margin-top: 20px;
@@ -97,13 +153,17 @@ $btn-dark: #083c96;
     width: 20px;
     height: 20px;
     background-color: white;
+    margin-right: 9px;
   }
   .not-robot:checked {
     background-image: url('../img/ellipse-blue.png');
   }
   .btn-log {
+    cursor: pointer;
+    padding: 0;
+    box-sizing: border-box;
     display: inline-block;
-    width: 189px;
+    width: 189.5px;
     height: 45px;
     background-color: $blue-btn;
     color: white;
@@ -119,12 +179,21 @@ $btn-dark: #083c96;
   }
   .btn-main {
     border-right: 2px solid rgba(222, 227, 231, 0.5);
-    width:187px;
+    //width:188px;
   }
   .nav-log {
     position: absolute;
     top: 100%;
+    left:0;
     transform: translateY(-100%);
-    transition-duration: 300ms;
+    display: flex;
+    justify-content: flex-start;
+      .btn-log{
+        transition-duration: 300ms;
+      }
+
   }
+
+.btn-enter{
+  border:none;
 }

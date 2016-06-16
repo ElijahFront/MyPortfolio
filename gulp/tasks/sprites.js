@@ -1,6 +1,4 @@
-/**
- * Created by Worker on 11.06.2016.
- */
+
 var svgConfig = {
     mode: {
         css: {		// Activate the «css» mode

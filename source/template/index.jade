@@ -87,19 +87,25 @@ html
 
     .block-login
       h1 Авторизуйтесь
-      input(type='text', class='inp input-log', placeholder='Логин')
-      input(type='text', class='inp input-password', placeholder='Пароль')
-      input(type='checkbox', class='human' id='human')
-      label(for='human', class='lablhum') Я человек
-      span.sure Вы точно не робот?
-      form
-        input(type='radio', class='not-robot yes' id='y-rob')
-        label(for='y-rob') Да
-        input(type='radio', class='not-robot no' id='n-rob')
-        label(for='n-rob') Не уверен
-      .nav-log
-        a.btn-log.btn-main(href='index.html') На главную
-        a.btn-log.btn-enter(href='#') Войти
+      form.login__form
+        .input-wrapper.input-wrapper-login
+          input(type='text', class='inp input-log', placeholder='Логин')
+        .input-wrapper.input-wrapper-password
+          input(type='text', class='inp input-password', placeholder='Пароль')
+        label.login__form_label.login__form_label-check
+          input(type='checkbox', class='human-check' id='human')
+          |Я человек
+        span.login__sure Вы точно не робот?
+        .login__sure_wrapper
+          label.login__form_label.login__form_label-sure
+            input(type='radio', class='not-robot yes' id='y-rob')
+            |Да
+          label.login__form_label.login__form_label-not-sure
+            input(type='radio', class='not-robot no' id='n-rob')
+            |Не уверен
+        .nav-log
+          a.btn-log.btn-main(href='index.html') На главную
+          input(type='submit', value='Войти').btn-log.btn-enter
 
     div.copy
       span.copyright © Илья Сметанин | создано с любовью в LoftSchool | 2016
