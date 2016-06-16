@@ -5,15 +5,16 @@
 
 .main-night{
   width: 100%;
-  height: 800px;
+  min-height: 650px;
+  height: 100vh;
   background: url('../img/photo-night.jpg') center no-repeat;
   background-size: cover;
   padding-top:153px;
-    .social{
-      position: absolute;
-      top:31px;
-      left: 30px;
-    }
+  .social{
+    position: absolute;
+    top:31px;
+    left: 30px;
+  }
   .linked-in{
     fill: #FFF;
   }
@@ -35,53 +36,68 @@
       fill: #004cd1;
     }
   }
-    .menu{
-      position: absolute;
-      right:31px;
-      top:28px;
-      background: url('../img/hamburger.svg') center no-repeat;
-      background-size: contain;
-      height: 35px;
-      width:40px;
+  .menu{
+    position: absolute;
+    right:31px;
+    top:28px;
+    background: url('../img/hamburger.svg') center no-repeat;
+    background-size: contain;
+    height: 35px;
+    width:40px;
+  }
+  .logo-about{
+    max-width:459px;
+    padding-top: 20px;
+    background: url('../img/star.png');
+    background-size: contain;
+    margin-left:auto;
+    margin-right: auto;
+    .icon-logo{
+      margin:0 auto;
     }
-    .logo-about{
-      max-width:310px;
-      margin-left:auto;
-      margin-right: auto;
-        .icon-logo{
-          margin:0 auto;
-        }
-      .text {
-        margin-top: 30px;
-        text-align: center;
-        .h1 {
-          color: white;
-          font-family: Roboto, sans-serif;
-          font-size: 35px;
-          font-weight: 500;
-          line-height: 41px;
-          margin-bottom: 7px;
-        }
-        span {
-          color: white;
-          font-family: Roboto, sans-serif;
-          font-size: 16px;
-          font-weight: 400;
-          line-height: 24px;
-        }
+    .text {
+      margin-top: 30px;
+      text-align: center;
+      .h1 {
+        color: white;
+        font-family: Roboto, sans-serif;
+        font-size: 35px;
+        font-weight: 500;
+        line-height: 41px;
+        margin-bottom: 7px;
       }
-
+      span {
+        color: white;
+        font-family: Roboto, sans-serif;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 24px;
+      }
     }
+
+  }
   .arrow{
+    width: 27px;
+    height: 20px;
+    position: relative;
     margin-top:133px;
     margin-left: auto;
     margin-right: auto;
     text-align: center;
+    a{
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
   }
 
 }
 .info-about-me, .advantages{
-  margin-top: -420px;
+  position: relative;
+  margin-top: -320px;
   height:1010px;
   width: 50%;
   display: flex;
@@ -92,144 +108,144 @@
 .info-about-me{
   float: left;
   background: url('../img/about_bg_left.svg') center no-repeat;
-    h1{
-      margin: 0;
-      margin-top: 120px;
-      color: #373e42;
-      font-family: SansusWebissimo, sans-serif;
-      font-size: 44px;
-     // font-weight: 400;
-      line-height: 66px;
-      text-transform: uppercase;
-    }
-    .about-pict{
-      max-width:443px;
-      max-height:390px;
-      margin-top: 59px;
-    }
-    .text-about{
-      text-align: center;
-      h2{
-        position: relative;
-        height: 27px;
-        color: #474b57;
-        font-family: SansusWebissimo, sans-serif;
-        font-size: 35px;
-       // font-weight: 400;
-        line-height: 41px;
-        text-transform: uppercase;
-          &:after{
-            display: block;
-            content: '';
-            position: absolute;
-            bottom:-20px;
-            left:50%;
-            margin-left: -44.5px;
-            width:89px;
-            height:0;
-            border:1.75px solid #566358;
-          }
-      }
-      .text-about-me{
-        width:415px;
-        margin-top: 39px;
-        color: #474b57;
-        font-family: Roboto, sans-serif;
-        font-size: 16px;
-        font-weight: 400;
-        line-height: 24px;
-      }
-    }
-}
-.advantages{
-  height:1006px;
-  transform: translateY(4px);
-  float: right;
-  background: url('../img/about_bg_right.svg') center no-repeat;
+  h1{
+    margin: 0;
+    margin-top: 120px;
+    color: #373e42;
+    font-family: SansusWebissimo, sans-serif;
+    font-size: 44px;
+    // font-weight: 400;
+    line-height: 66px;
+    text-transform: uppercase;
+  }
+  .about-pict{
+    max-width:443px;
+    max-height:390px;
+    margin-top: 59px;
+  }
+  .text-about{
+    text-align: center;
     h2{
-      text-align: center;
-      max-width: 253px;
-      margin: 0;
-      margin-top: 120px;
+      position: relative;
+      margin-top: 41px;
+      height: 25px;
       color: #474b57;
       font-family: SansusWebissimo, sans-serif;
-      font-size: 26px;
-     // font-weight: 400;
+      font-size: 35px;
+      // font-weight: 400;
       line-height: 41px;
       text-transform: uppercase;
-      position: relative;
-        &:after{
-          display: block;
-          content: '';
-          position: absolute;
-          bottom:-20px;
-          left:50%;
-          margin-left: -44.5px;
-          width:89px;
-          height:0;
-          border:1.5px solid #566358;
-        }
+      &:after{
+        display: block;
+        content: '';
+        position: absolute;
+        bottom:-25px;
+        left:50%;
+        margin-left: -44.5px;
+        width:89px;
+        height:0;
+        border:1.5px solid #566358;
+      }
     }
-    .my-prof{
-      margin-top: 62px;
-      width:532px;
+    .text-about-me{
+      width:415px;
+      margin-top: 39px;
       color: #474b57;
       font-family: Roboto, sans-serif;
       font-size: 16px;
       font-weight: 400;
       line-height: 24px;
     }
-    .graphics{
-      .front, .back, .workflow{
-        margin-bottom: 40px;
-          h3{
-            color: #474b57;
-            font-family: Roboto, sans-serif;
-            font-size: 28px;
-            font-weight: 500;
-            line-height: 32px;
-          }
-          .diagrams{
-            margin-top: 19px;
-          }
+  }
+}
+.advantages{
+  height:1006px;
+  transform: translateY(4px);
+  float: right;
+  background: url('../img/about_bg_right.svg') center no-repeat;
+  h2{
+    text-align: center;
+    max-width: 253px;
+    margin: 0;
+    margin-top: 120px;
+    color: #474b57;
+    font-family: SansusWebissimo, sans-serif;
+    font-size: 26px;
+    // font-weight: 400;
+    line-height: 41px;
+    text-transform: uppercase;
+    position: relative;
+    &:after{
+      display: block;
+      content: '';
+      position: absolute;
+      bottom:-20px;
+      left:50%;
+      margin-left: -44.5px;
+      width:89px;
+      height:0;
+      border:1.5px solid #566358;
+    }
+  }
+  .my-prof{
+    margin-top: 62px;
+    width:532px;
+    color: #474b57;
+    font-family: Roboto, sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+  }
+  .graphics{
+    .front, .back, .workflow{
+      margin-bottom: 40px;
+      h3{
+        color: #474b57;
+        font-family: Roboto, sans-serif;
+        font-size: 28px;
+        font-weight: 500;
+        line-height: 32px;
       }
-      .workflow{
-        margin-bottom: 0;
+      .diagrams{
+        margin-top: 19px;
       }
-      .dia{
-        display: inline-block;
-        position: relative;
-        width: 110px;
-        height: 110px;
-        margin-right: 37px;
-        &:last-of-type{
-          margin-right: 0;
-        }
-        &:after{
-          position: absolute;
-          top:50%;
-          left:50%;
-          transform: translate(-50%, -50%);
+    }
+    .workflow{
+      margin-bottom: 0;
+    }
+    .dia{
+      display: inline-block;
+      position: relative;
+      width: 110px;
+      height: 110px;
+      margin-right: 37px;
+      &:last-of-type{
+        margin-right: 0;
+      }
+      &:after{
+        position: absolute;
+        top:50%;
+        left:50%;
+        transform: translate(-50%, -50%);
 
-          color: #243994;
-          font-family: Roboto, sans-serif;
-          font-size: 12px;
-          text-align: center;
-          font-weight: 500;
-          line-height: 18px;
-        }
-        img{
-          width:100%;
-          height:100%;
-        }
-
+        color: #243994;
+        font-family: Roboto, sans-serif;
+        font-size: 12px;
+        text-align: center;
+        font-weight: 500;
+        line-height: 18px;
+      }
+      img{
+        width:100%;
+        height:100%;
       }
 
     }
 
+  }
+
 
 }
-
 .html5:after{
   content: 'HTML5';
 }
@@ -262,14 +278,16 @@
 }
 
 .map{
+  padding-bottom: 153px;
   width: 100%;
   height:980px;
   display: flex;
   justify-content: center;
   align-items: center;
-    .contacts{
-      width: 580px;
-      height: 283px;
-      background-color: rgba(255, 255, 255, 0.7);
-    }
+  .contacts{
+    width: 580px;
+    height: 283px;
+    background-color: rgba(255, 255, 255, 0.7);
+  }
 }
+

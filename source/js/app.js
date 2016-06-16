@@ -1,17 +1,28 @@
-var block = document.getElementById('bl'),
-    btn = document.getElementById('log');
 
-btn.onclick = function () {
-  block.style.display = 'none';
-  document.getElementsByClassName('block-login')[0].style.display = 'flex';
-  btn.style.display = 'none';
+  var change = function (disp, disp2,cl) {
+  $('.block').css('display', disp);
+  $('.block-login').css('display', disp2);
+  $('#log').addClass(cl);
 };
+  
+  $("#log").on("click", function(e) {
+    $("#bl").addClass("flipped");
+    $("#log").css('display', 'none');
+    setTimeout(function(){
+      change('none','flex','tapped')}, 600);
+    e.stopPropagation()
+    });
 
-if (btn.style.display == 'none'){
 
-  document.onclick = function () {
-    block.style.display = 'flex';
-    document.getElementsByClassName('block-login')[0].style.display = 'none';
-    btn.display = 'block';
-  }
+
+
+
+if ($('#log').hasClass('tapped')) {
+
+  $(document).on('click', function () {
+    $('#bl').removeClass('flipped');
+    $('#log').removeClass('tapped');
+    setTimeout(change('flex', 'none'), 1000)
+  });
 }
+

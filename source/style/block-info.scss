@@ -1,3 +1,8 @@
+#bl{
+  transform-style: preserve-3d;
+
+
+}
 .block{
   box-sizing: border-box;
   margin-top: 143px;
@@ -109,4 +114,16 @@
     .btn:hover{
       background-color: rgba(4, 62, 163, 0.85);
     }
+}
+.flipped{
+  animation-name: rotate;
+  animation-duration: 1s;
+}
+@keyframes rotate {
+  from{
+    transform: rotateY(0deg);
+  }
+  to{
+    transform: rotateY(180deg);
+  }
 }

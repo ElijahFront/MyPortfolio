@@ -1,0 +1,41 @@
+.container{
+  width:100%;
+  height: 100%;
+  text-align: center;
+  .main-circle{
+    margin: 100px auto;
+  text-align: center;
+  .big-circle {
+    animation-name: spin;
+    animation-duration: 1s;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-in-out;
+    margin: 0 auto;
+    width: 64px;
+    height: 64px;
+    position: relative;
+    border-radius: 50%;
+    border:1px solid lightgreen;
+      &:after{
+        display: block;
+        content: '';
+        position: absolute;
+        top:-10px;
+        left:50%;
+        width:5px;
+        height:5px;
+        border-radius: 50%;
+        background: black;
+
+      }
+  }
+  }
+}
+@keyframes spin {
+  from{
+    transform: rotate(0deg);
+  }
+  to{
+    transform: rotate(720deg);
+  }
+}

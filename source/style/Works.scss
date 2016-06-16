@@ -1,5 +1,12 @@
-.main-night{
+body{
   position: relative;
+}
+.main-night{
+
+  position: relative;
+  min-height: 650px;
+  height: 100vh;
+
     .bg-main{
       position: absolute;
       top:100%;
