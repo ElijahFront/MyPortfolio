@@ -94,23 +94,9 @@
   font-size: 0;
   position: absolute;
   top:100%;
+  left: 0;
   transform: translateY(-100%);
   width: 100%;
-  /*.btn{
-    text-decoration: none;
-    height:45px;
-    background-color: rgba(0, 76, 209, 0.85);
-    color: white;
-    font-family: Roboto, sans-serif;
-    font-size: 16px;
-    font-weight: 500;
-    line-height: 45px;
-    display: inline-block;
-    padding-left: 31px;
-    padding-right: 30px;
-    border-right: 2px solid rgba(222, 227, 231, 0.5);
-    transition-duration: 189ms;
-  } */
     .nav__btn:last-of-type {
       border:none;
     }

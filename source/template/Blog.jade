@@ -90,13 +90,16 @@ html
 
         aside.blog__themes
             ul.blog__list
-                li.blog__list_item.blog__list_item-active Самое важное в SASS
-                    a(href='#')
-                li.blog__list_item Новая тема
-                    a(href='#')
+                li.blog__list_item.blog__list_item
+                    a(href='#').blog__list_item-link.blog__list_item-link-active Самое важное в SASS
                 li.blog__list_item
+                    a(href='#').blog__list_item-link Новая тема
                 li.blog__list_item
+                    a(href='#').blog__list_item-link
                 li.blog__list_item
+                    a(href='#').blog__list_item-link
+                li.blog__list_item
+                    a(href='#').blog__list_item-link
 
         mixin Art(h2, date, inner)
             .content__article
