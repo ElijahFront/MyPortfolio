@@ -1,12 +1,7 @@
 @import "common/_mixins";
-html{
-  position: relative;
-}
-body{
-  margin-bottom: 185px;
-  @include tablet{
-    margin-bottom: 252px;;
-  }
+
+.works-body{
+  margin: 0;
 }
 .main-night{
 

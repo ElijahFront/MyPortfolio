@@ -1,3 +1,13 @@
+html{
+  position: relative;
+}
+body{
+  margin-bottom: 135px;
+  @include tablet{
+    margin-bottom: 202px;;
+  }
+}
+
 footer{
   box-sizing: border-box;
   display: flex;
