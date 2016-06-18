@@ -1,7 +1,12 @@
 @import "common/_mixins";
-
-body{
+html{
   position: relative;
+}
+body{
+  margin-bottom: 185px;
+  @include tablet{
+    margin-bottom: 252px;;
+  }
 }
 .main-night{
 
@@ -16,7 +21,7 @@ body{
       transform: translateY(-100%);
       width:100%;
       height:400px;
-      background: url("../img/bg.svg") center no-repeat;
+      background: url("../img/bg.svg") bottom no-repeat;
       background-size: cover;
       text-align: center;
         h1{

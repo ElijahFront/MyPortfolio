@@ -1,7 +1,7 @@
+@import 'common/_mixins';
+
 #bl{
   transform-style: preserve-3d;
-
-
 }
 .block{
   box-sizing: border-box;
@@ -16,6 +16,12 @@
   align-items: center;
   padding-top: 40px;
   position: relative;
+  @include tablet{
+    width:348px;
+  }
+  @include phone{
+    width:300px;
+  }
 }
 .icon-logo{
   margin: 0;
@@ -82,11 +88,15 @@
     }
 }
 .nav{
+  display: flex;
+  flex-grow: 1;
+  flex-shrink: 0;
   font-size: 0;
   position: absolute;
   top:100%;
   transform: translateY(-100%);
-  .btn{
+  width: 100%;
+  /*.btn{
     text-decoration: none;
     height:45px;
     background-color: rgba(0, 76, 209, 0.85);
@@ -100,8 +110,8 @@
     padding-right: 30px;
     border-right: 2px solid rgba(222, 227, 231, 0.5);
     transition-duration: 189ms;
-  }
-    .btn:last-of-type {
+  } */
+    .nav__btn:last-of-type {
       border:none;
     }
     .blog{
@@ -111,9 +121,27 @@
       padding-left: 32px;
     }
 
-    .btn:hover{
+    .nav__btn:hover{
       background-color: rgba(4, 62, 163, 0.85);
     }
+}
+.nav__btn{
+  flex-grow: 1;
+  text-decoration: none;
+  height:45px;
+  background-color: rgba(0, 76, 209, 0.85);
+  color: white;
+  font-family: Roboto, sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 45px;
+  display: inline-block;
+  text-align: center;
+  //padding-left: 31px;
+  //padding-right: 30px;
+  padding: 0 auto;
+  border-right: 2px solid rgba(222, 227, 231, 0.5);
+  transition-duration: 189ms;
 }
 .flipped{
   animation-name: rotate;

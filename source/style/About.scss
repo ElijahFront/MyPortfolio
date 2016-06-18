@@ -58,7 +58,7 @@
     .text {
       margin-top: 30px;
       text-align: center;
-      .h1 {
+      h2 {
         color: white;
         font-family: Roboto, sans-serif;
         font-size: 35px;
@@ -278,16 +278,92 @@
 }
 
 .map{
-  padding-bottom: 153px;
+  position: relative;
+  //padding-bottom: 153px;
   width: 100%;
-  height:980px;
+  height: 100vh;
+  min-height:650px;
   display: flex;
   justify-content: center;
   align-items: center;
-  .contacts{
-    width: 580px;
-    height: 283px;
-    background-color: rgba(255, 255, 255, 0.7);
+
+}
+.map-wrapper{
+  width: 100%;
+  height: 100%;
+}
+.about__contacts{
+  position: absolute;
+  top:50%;
+  left:50%;
+  transform: translate(-50%, -70%);
+  width: 580px;
+  height: 283px;
+  background-color: rgba(white, .7);
+  z-index: 1000000000;
+  h2{
+    margin: 0;
+    padding:0;
+    text-align: center;
+    position: relative;
+    color: #474b57;
+    font-family: SansusWebissimo;
+    font-size: 35px;
+    font-weight: 400;
+    line-height: 41px;
+    text-transform: uppercase;
+    &:after{
+      display: block;
+      content: '';
+      position: absolute;
+      bottom:-25px;
+      left:50%;
+      margin-left: -44.5px;
+      width:89px;
+      height:0;
+      border:1.5px solid #566358;
+    }
   }
 }
-
+.map__contacts_list{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  margin-top: 62px;
+  display: flex;
+  flex-wrap: wrap;
+}
+.map__list_item{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  padding-left: 54px;
+  opacity: 0.8;
+  color: #484b57;
+  font-family: Roboto;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 45px;
+  position: relative;
+  margin-bottom: 50px;
+  &:before{
+    display: block;
+    content: '';
+    position: absolute;
+    top:0;
+    left: 0px;
+    width: 45px;
+    height: 45px;
+  }
+}
+@mixin listit($name, $icon){
+  .map__list_item-#{$name}:before{
+    background: url('../img/#{$icon}.svg') center no-repeat;
+    background-size: cover;
+  }
+};
+@include listit(skype, skype_n);
+@include listit(mail, envelope_n);
+@include listit(tel, phone_n);
+@include listit(adress, map_n);

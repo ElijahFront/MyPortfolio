@@ -50,17 +50,391 @@ html
                         .dia.bower
                             img(src='./assets/img/skill-bower.png')
 
-        section.map
-            <script src='https://maps.googleapis.com/maps/api/js?v=3.exp'></script><div style='overflow:hidden;height:440px;width:700px;'><div id='gmap_canvas' style='height:440px;width:700px;'></div><div><small><a href="http://embedgooglemaps.com">									embed google maps							</a></small></div><div><small><a href="https:/disclaimergenerator.net">disclaimer example</a></small></div><style>#gmap_canvas img{max-width:none!important;background:none!important}</style></div><script type='text/javascript'>function init_map(){var myOptions = {zoom:15,center:new google.maps.LatLng(51.50829913491843,-0.12745789259031692),mapTypeId: google.maps.MapTypeId.ROADMAP};map = new google.maps.Map(document.getElementById('gmap_canvas'), myOptions);marker = new google.maps.Marker({map: map,position: new google.maps.LatLng(51.50829913491843,-0.12745789259031692)});infowindow = new google.maps.InfoWindow({content:'<strong>Title</strong><br>London, United Kingdom<br>'});google.maps.event.addListener(marker, 'click', function(){infowindow.open(map,marker);});infowindow.open(map,marker);}google.maps.event.addDomListener(window, 'load', init_map);</script>
-            .contacts
-                h2 Контакты
-                .first
-                    span.skype cuprum661
-                    span.mail cuprum19930@gmail.com
 
-                .second
-                    span.tel +79221350965
-                    span.addres my-addres, 31, 54
+        section.map
+            .about__contacts
+                h2 Контакты
+                ul.map__contacts_list
+                    li.map__list_item.map__list_item-skype cuprum661
+                    li.map__list_item.map__list_item-mail cuprum19930@gmail.com
+                    li.map__list_item.map__list_item-tel +79221350965
+                    li.map__list_item.map__list_item-adress my-addres, 31, 54
+            .map-wrapper#map
+                script(type="text/javascript").
+                    var map;
+                    function initMap() {
+                    map = new google.maps.Map(document.getElementById('map'), {
+                    center: {lat: 56.813163, lng: 60.569944},
+                    zoom: 14,
+                        styles: [
+                            {
+                                "featureType": "administrative",
+                                "elementType": "all",
+                                "stylers": [
+                                    {
+                                        "visibility": "on"
+                                    },
+                                    {
+                                        "lightness": 33
+                                    }
+                                ]
+                            },
+                            {
+                                "featureType": "administrative",
+                                "elementType": "labels",
+                                "stylers": [
+                                    {
+                                        "saturation": "-100"
+                                    }
+                                ]
+                            },
+                            {
+                                "featureType": "administrative",
+                                "elementType": "labels.text",
+                                "stylers": [
+                                    {
+                                        "gamma": "0.75"
+                                    }
+                                ]
+                            },
+                            {
+                                "featureType": "administrative.neighborhood",
+                                "elementType": "labels.text.fill",
+                                "stylers": [
+                                    {
+                                        "lightness": "-37"
+                                    }
+                                ]
+                            },
+                            {
+                                "featureType": "landscape",
+                                "elementType": "geometry",
+                                "stylers": [
+                                    {
+                                        "color": "#f9f9f9"
+                                    }
+                                ]
+                            },
+                            {
+                                "featureType": "landscape.man_made",
+                                "elementType": "geometry",
+                                "stylers": [
+                                    {
+                                        "saturation": "-100"
+                                    },
+                                    {
+                                        "lightness": "40"
+                                    },
+                                    {
+                                        "visibility": "off"
+                                    }
+                                ]
+                            },
+                            {
+                                "featureType": "landscape.natural",
+                                "elementType": "labels.text.fill",
+                                "stylers": [
+                                    {
+                                        "saturation": "-100"
+                                    },
+                                    {
+                                        "lightness": "-37"
+                                    }
+                                ]
+                            },
+                            {
+                                "featureType": "landscape.natural",
+                                "elementType": "labels.text.stroke",
+                                "stylers": [
+                                    {
+                                        "saturation": "-100"
+                                    },
+                                    {
+                                        "lightness": "100"
+                                    },
+                                    {
+                                        "weight": "2"
+                                    }
+                                ]
+                            },
+                            {
+                                "featureType": "landscape.natural",
+                                "elementType": "labels.icon",
+                                "stylers": [
+                                    {
+                                        "saturation": "-100"
+                                    }
+                                ]
+                            },
+                            {
+                                "featureType": "poi",
+                                "elementType": "geometry",
+                                "stylers": [
+                                    {
+                                        "saturation": "-100"
+                                    },
+                                    {
+                                        "lightness": "80"
+                                    }
+                                ]
+                            },
+                            {
+                                "featureType": "poi",
+                                "elementType": "labels",
+                                "stylers": [
+                                    {
+                                        "saturation": "-100"
+                                    },
+                                    {
+                                        "lightness": "0"
+                                    }
+                                ]
+                            },
+                            {
+                                "featureType": "poi.attraction",
+                                "elementType": "geometry",
+                                "stylers": [
+                                    {
+                                        "lightness": "-4"
+                                    },
+                                    {
+                                        "saturation": "-100"
+                                    }
+                                ]
+                            },
+                            {
+                                "featureType": "poi.park",
+                                "elementType": "geometry",
+                                "stylers": [
+                                    {
+                                        "color": "#c5dac6"
+                                    },
+                                    {
+                                        "visibility": "on"
+                                    },
+                                    {
+                                        "saturation": "-95"
+                                    },
+                                    {
+                                        "lightness": "62"
+                                    }
+                                ]
+                            },
+                            {
+                                "featureType": "poi.park",
+                                "elementType": "labels",
+                                "stylers": [
+                                    {
+                                        "visibility": "on"
+                                    },
+                                    {
+                                        "lightness": 20
+                                    }
+                                ]
+                            },
+                            {
+                                "featureType": "road",
+                                "elementType": "all",
+                                "stylers": [
+                                    {
+                                        "lightness": 20
+                                    }
+                                ]
+                            },
+                            {
+                                "featureType": "road",
+                                "elementType": "labels",
+                                "stylers": [
+                                    {
+                                        "saturation": "-100"
+                                    },
+                                    {
+                                        "gamma": "1.00"
+                                    }
+                                ]
+                            },
+                            {
+                                "featureType": "road",
+                                "elementType": "labels.text",
+                                "stylers": [
+                                    {
+                                        "gamma": "0.50"
+                                    }
+                                ]
+                            },
+                            {
+                                "featureType": "road",
+                                "elementType": "labels.icon",
+                                "stylers": [
+                                    {
+                                        "saturation": "-100"
+                                    },
+                                    {
+                                        "gamma": "0.50"
+                                    }
+                                ]
+                            },
+                            {
+                                "featureType": "road.highway",
+                                "elementType": "geometry",
+                                "stylers": [
+                                    {
+                                        "color": "#c5c6c6"
+                                    },
+                                    {
+                                        "saturation": "-100"
+                                    }
+                                ]
+                            },
+                            {
+                                "featureType": "road.highway",
+                                "elementType": "geometry.stroke",
+                                "stylers": [
+                                    {
+                                        "lightness": "-13"
+                                    }
+                                ]
+                            },
+                            {
+                                "featureType": "road.highway",
+                                "elementType": "labels.icon",
+                                "stylers": [
+                                    {
+                                        "lightness": "0"
+                                    },
+                                    {
+                                        "gamma": "1.09"
+                                    }
+                                ]
+                            },
+                            {
+                                "featureType": "road.arterial",
+                                "elementType": "geometry",
+                                "stylers": [
+                                    {
+                                        "color": "#e4d7c6"
+                                    },
+                                    {
+                                        "saturation": "-100"
+                                    },
+                                    {
+                                        "lightness": "47"
+                                    }
+                                ]
+                            },
+                            {
+                                "featureType": "road.arterial",
+                                "elementType": "geometry.stroke",
+                                "stylers": [
+                                    {
+                                        "lightness": "-12"
+                                    }
+                                ]
+                            },
+                            {
+                                "featureType": "road.arterial",
+                                "elementType": "labels.icon",
+                                "stylers": [
+                                    {
+                                        "saturation": "-100"
+                                    }
+                                ]
+                            },
+                            {
+                                "featureType": "road.local",
+                                "elementType": "geometry",
+                                "stylers": [
+                                    {
+                                        "color": "#fbfaf7"
+                                    },
+                                    {
+                                        "lightness": "77"
+                                    }
+                                ]
+                            },
+                            {
+                                "featureType": "road.local",
+                                "elementType": "geometry.fill",
+                                "stylers": [
+                                    {
+                                        "lightness": "-5"
+                                    },
+                                    {
+                                        "saturation": "-100"
+                                    }
+                                ]
+                            },
+                            {
+                                "featureType": "road.local",
+                                "elementType": "geometry.stroke",
+                                "stylers": [
+                                    {
+                                        "saturation": "-100"
+                                    },
+                                    {
+                                        "lightness": "-15"
+                                    }
+                                ]
+                            },
+                            {
+                                "featureType": "transit.station.airport",
+                                "elementType": "geometry",
+                                "stylers": [
+                                    {
+                                        "lightness": "47"
+                                    },
+                                    {
+                                        "saturation": "-100"
+                                    }
+                                ]
+                            },
+                            {
+                                "featureType": "water",
+                                "elementType": "all",
+                                "stylers": [
+                                    {
+                                        "visibility": "on"
+                                    },
+                                    {
+                                        "color": "#acbcc9"
+                                    }
+                                ]
+                            },
+                            {
+                                "featureType": "water",
+                                "elementType": "geometry",
+                                "stylers": [
+                                    {
+                                        "saturation": "53"
+                                    }
+                                ]
+                            },
+                            {
+                                "featureType": "water",
+                                "elementType": "labels.text.fill",
+                                "stylers": [
+                                    {
+                                        "lightness": "-42"
+                                    },
+                                    {
+                                        "saturation": "17"
+                                    }
+                                ]
+                            },
+                            {
+                                "featureType": "water",
+                                "elementType": "labels.text.stroke",
+                                "stylers": [
+                                    {
+                                        "lightness": "61"
+                                    }
+                                ]
+                            }
+                        ]
+                        });
+                        }
+
 
         include common/footer
 
+        script(async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBdqO1yNKISWVIVSnGlRUJ_vk57S0eNtyY&callback=initMap")

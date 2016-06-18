@@ -18,7 +18,7 @@
 
 if ($('#log').hasClass('tapped')) {
 
-  $(document).on('click', function () {
+  $(document).on('click', function (e) {
     $('#bl').removeClass('flipped');
     $('#log').removeClass('tapped');
     setTimeout(change('flex', 'none', ''), 1000)

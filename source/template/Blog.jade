@@ -67,7 +67,7 @@ html
             .icon-logo
                 img(src="assets/img/ava-crop.jpeg")
             .text.blog__text
-                h1 Блог
+                h2 Блог
                 span Статьи, которые я написал
         .arrow
             a(href='#works-anchor')
@@ -82,20 +82,19 @@ html
             |        c0.391,0.391,0.391,1.031,0,1.422L13.293,15.871z"/>
             |</g>
             |</svg>
-        .bg-main.blog
-
-            h1 Мои работы
+        .bg-main.bg-main_blog
+        //    h1 Мои работы
 
 
     section.main-blog
-        .container
-            aside.main-blog__aside
-                ul.blog__list
-                    li.blog__list-item Самое важное в SASS
-                    li.blog__list-item Новая тема
-                    li.blog__list-item
-                    li.blog__list-item
-                    li.blog__list-item
+
+        aside.blog__themes
+            ul.blog__list
+                li.blog__list-item Самое важное в SASS
+                li.blog__list-item Новая тема
+                li.blog__list-item
+                li.blog__list-item
+                li.blog__list-item
 
         mixin Art(h2, date, inner)
             .content__article
@@ -126,5 +125,6 @@ html
             ' широкому кругу (специалистов) участие в формировании позиций, занимаемых участниками в отношении поставленных задач. Товарищи!' +
             ' постоянный количественный рост и сфера нашей активности способствует подготовки и реализации модели развития. С другой стороны рамки' +
             ' и место обучения кадров влечет за собой процесс внедрения и модернизации системы обучения кадров, соответствует насущным потребностям.')
+
 
     include common/footer

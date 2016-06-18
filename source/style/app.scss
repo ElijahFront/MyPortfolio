@@ -1,3 +1,4 @@
+@import 'common/_mixins';
 $lightblue: rgba(0, 76, 209, 0.7);
 $blue: rgb(0, 76, 209);
 body {
@@ -16,7 +17,7 @@ ul{
 @import "about";
 @import "works";
 @import "preloader";
-
+@import "blog";
 
 @media all and (max-width: 420px) {
   .login {
@@ -64,4 +65,8 @@ ul{
 }
 .vk-svg{
   fill: $lightblue;
+}
+
+.tapped{
+  display: none;
 }
