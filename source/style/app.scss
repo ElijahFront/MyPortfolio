@@ -18,15 +18,8 @@ ul{
 @import "works";
 @import "preloader";
 @import "blog";
+@import "skill";
 
-@media all and (max-width: 420px) {
-  .login {
-    position: static;
-    margin-top: 10px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-}
 @media all and (min-width: 768px) and (min-height: 1024px){
   .block{
     margin-top: 275px;
@@ -42,9 +35,6 @@ ul{
       img{
         width:115%;
       }
-  }
-  .login{
-    right:20px;
   }
 }
 @media all and (min-width: 1800px){

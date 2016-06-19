@@ -1,7 +1,7 @@
 doctype html
 html
   include common/_head
-  body
+  body.index-body
     <!--[if lt IE 7]>
     <p class="browsehappy">Вы используете <strong>устаревший</strong> браузер. Пожалуйста <a href="http://browsehappy.com/">обновите его</a></p>
     <![endif]-->
@@ -87,7 +87,7 @@ html
 
     .block-login
       h1 Авторизуйтесь
-      form.login__form
+      form(name='LoginForm').login__form
         .input-wrapper.input-wrapper-login
           input(type='text', class='inp input-log', placeholder='Логин')
         .input-wrapper.input-wrapper-password
@@ -98,10 +98,10 @@ html
         span.login__sure Вы точно не робот?
         .login__sure_wrapper
           label.login__form_label.login__form_label-sure
-            input(type='radio', class='not-robot yes' id='y-rob')
+            input(type='radio', name='notArobot', class='not-robot yes' id='y-rob')
             |Да
           label.login__form_label.login__form_label-not-sure
-            input(type='radio', class='not-robot no' id='n-rob')
+            input(type='radio', name='notArobot', class='not-robot no' id='n-rob')
             |Не уверен
         .nav-log
           a.btn-log.btn-main(href='index.html') На главную

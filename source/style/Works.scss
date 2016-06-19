@@ -1,8 +1,8 @@
 @import "common/_mixins";
-
-.works-body{
-  margin: 0;
+html{
+  min-width: 370px;
 }
+
 .main-night{
 
   position: relative;
@@ -26,8 +26,30 @@
           font-weight: 600;
           line-height: 46px;
           text-transform: uppercase;
-          margin-top: 244px;
+          position: relative;
+          margin-top: 255px;
+          &:after{
+            display: block;
+            content: '';
+            position: absolute;
+            top:-62px;
+            left:50%;
+            transform: translateX(-50%);
+            width: 266px;
+            height: 209px;
+            background: url('../img/star.png') center no-repeat;
+            background-size: contain;
+          }
+          @include phone{
+            font-size: 35px;
+            font-weight: 400;
+            line-height: 42px;
+            margin-top: 200px;
+          }
         }
+      @include phone{
+        height: 300px;
+      }
     }
 }
 .slider__wrapper{
@@ -42,35 +64,33 @@
     height:auto;
   }
 }
-
-/*.slider__wrapper:after{
-    content: " ";
-    clear: both;
-    display: table;
-}
-*/
 .slider__work-description{
-  //float: left;
+  box-sizing: border-box;
   width: 50%;
   height: 100%;
   @include tablet{
     width:100%;
     order:2;
     min-height: 270px;
+    height: 260px;
   }
   background-color: #f2f0e8;
   display: flex;
   justify-content:center;
   align-items:center;
-
     }
 .slider__work-description_info{
+  box-sizing: border-box;
+
   text-align: center;
   width:auto;
   max-width: 319px;
   @include tablet{
-    margin-top:46px;
-    margin-bottom: 60px;
+
+  }
+  @include phone{
+    padding-top: 30px;
+    padding-bottom: 30px;
   }
   h2{
     margin: 0;
@@ -83,6 +103,9 @@
     font-weight: 600;
     line-height: 38px;
     text-transform: uppercase;
+    @include phone{
+      margin-bottom: 42px;
+    }
     &:after{
       display: block;
       content: '';
@@ -102,17 +125,23 @@
     font-weight: 500;
   }
   .visit-site{
-    padding-left: 50px;
+    box-sizing: border-box;
+    padding-left: 40px;
     position: relative;
     line-height: 45px;
     margin: 0 auto;
     text-decoration: none;
     margin-top: 59px;
     display: block;
-    width:150px;
+    width:200px;
     height: 45px;
     background-color: #004cd1;
     color: #FFFFFF;
+    transition-duration: 200ms;
+    @include phone{
+      width: 185px;
+      margin-top: 17px;
+    }
     &:before{
       display: block;
       position: absolute;
@@ -122,6 +151,9 @@
       height:19px;
       content:'';
       background: url("../img/link.svg") center no-repeat;
+    }
+    &:hover{
+      background-color: $lightblue;
     }
   }
 }
@@ -135,7 +167,10 @@
   @include tablet{
     width:100%;
     order:1;
-    min-height: 600px;
+    height: 600px;
+  }
+  @include phone{
+    max-height: 260px;
   }
   background-color: #e3e2de;
 
@@ -191,6 +226,34 @@
   transform: translate(-50%, -50%);
   z-index: 4;
 }
+@keyframes arrowUp{
+  from{
+    top:50%;
+  }
+  to{
+    top: 45%;
+  }
+}
+@keyframes arrowDown {
+  from{
+    top:50%;
+  }
+  to{
+    top: 55%;
+  }
+}
+.btn-up:hover .move__control-up{
+  animation-name: arrowUp;
+  animation-direction: alternate-reverse;
+  animation-duration: 400ms;
+  animation-timing-function: linear;
+}
+.btn-down:hover .move__control-down{
+  animation-name: arrowDown;
+  animation-direction: alternate-reverse;
+  animation-duration: 300ms;
+  animation-timing-function: linear;
+}
 .portf__arrow{
   box-shadow: 0 2px 2px rgba(0, 0, 0, 0.16);
 }
@@ -204,6 +267,7 @@
   z-index: 0;
 }
 .gossips {
+  box-sizing: border-box;
   height: 1353px;
   width: 100%;
   background: url('../img/night-tree.jpg') center no-repeat;
@@ -212,23 +276,52 @@
   flex-direction: column;
   align-items: center;
   color: white;
-  h1 {
-    max-width: 333px;
+  @include phone{
+    height: 1507px;
+  }
+  h2 {
+    max-width: 345px;
+    height:202px;
     text-align: center;
     margin: 0;
-    margin-top: 69px;
+    margin-top: 49px;
+    padding-top: 20px;
+
     margin-bottom: 72px;
     color: white;
     font-family: SansusWebissimo, sans-serif;
-    font-size: 43px;
+    font-size: 63px;
     font-weight: 700;
     line-height: 66px;
     text-transform: uppercase;
+    background: url('../img/stars3.png') top no-repeat;
+    background-size: contain;
+    @include tablet{
+      font-size: 49px;
+      font-weight: 400;
+      line-height: 56px;
+      height: 175px;
+    }
+    @include phone{
+      height: 82px;
+      max-width: 190px;
+      font-size: 35px;
+      font-weight: 400;
+      line-height: 42px;
+      margin-top: 40px;
+      margin-bottom: 20px;
+    }
   }
   .opinions-wrappwer {
     display: flex;
     max-width: 742px;
     justify-content: space-between;
+    @include tablet{
+      width:92%;
+    }
+    @include phone{
+      flex-direction:column;
+    }
   }
   .logo {
     margin: 0 auto;
@@ -261,11 +354,34 @@
       background: url("../img/quote.png") center no-repeat;
       background-size: contain;
     }
+    @include tablet{
+      font-size: 14px;
+      line-height: 24px;
+    }
   }
   .Dima {
-    padding-right: 4px;
+    box-sizing: border-box;
+    padding-right: 26px;
+    @include tablet{
+      padding-right: 17px;
+    }
+  }
+  .author{
+    span{
+      color: white;
+      font-family: Roboto;
+      font-size: 16px;
+      line-height: 24px;
+      font-weight: 700;
+      font-style: italic;
+      @include phone{
+        font-size: 14px;
+      }
+    }
   }
   .feedback {
+    box-sizing: border-box;
+    padding-top: 40px;
     position: relative;
     margin-top: 69px;
     width: 348px;
@@ -274,12 +390,20 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    @include tablet{
+      padding-top: 35px;
+    }
+    @include phone{
+      margin-top: 37px;
+      width:90%;
+      height: 422px;
+    }
     h3 {
       position: relative;
       color: white;
       font-family: SansusWebissimo, sans-serif;
-      font-size: 25px;
-      font-weight: 600;
+      font-size: 35px;
+      font-weight: 400;
       line-height: 41px;
       text-transform: uppercase;
       margin-bottom: 62px;
@@ -293,9 +417,22 @@
         width: 89px;
         height: 0;
         border: 1.75px solid #566358;
+        @include phone{
+          bottom: -14px;
+        }
+      }
+      @include tablet{
+        font-size: 30px;
+        margin-bottom: 42px;
+      }
+      @include phone{
+        font-size: 21px;
+        font-weight: 400;
+        line-height: 28px;
       }
     }
-    form {
+    .feedback__form {
+      height: 100%;
       text-align: center;
       position: relative;
       .inputs {
@@ -316,6 +453,10 @@
           font-size: 16px;
           font-weight: 300;
           line-height: 45px;
+          @include tablet{
+            font-size: 14px;
+            line-height: 24px;
+          }
         }
         &:-ms-input-placeholder {
           opacity: 0.5;
@@ -324,6 +465,10 @@
           font-size: 16px;
           font-weight: 300;
           line-height: 45px;
+          @include tablet{
+            font-size: 14px;
+            line-height: 24px;
+          }
         }
         &::-webkit-input-placeholder {
           opacity: 0.5;
@@ -332,6 +477,10 @@
           font-size: 16px;
           font-weight: 300;
           line-height: 45px;
+          @include tablet{
+            font-size: 14px;
+            line-height: 24px;
+          }
         }
       }
       textarea {
@@ -376,13 +525,8 @@
       }
       .submit-btn {
         cursor: pointer;
-        position: absolute;
-        bottom: -66px;
-        left: 0;
         display: block;
-        width: 50%;
         box-sizing: border-box;
-        background-color: $blue;
         height: 45px;
         color: white;
         font-family: Roboto, sans-serif;
@@ -391,9 +535,27 @@
         line-height: 45px;
         text-align: center;
         border: none;
+        width: 50%;
+        background-color: $blue;
         &:hover {
           background-color: $lightblue;
         }
+      }
+      .clear{
+        background-color: transparent;
+        &:hover{
+          background-color: rgba(white, .07);
+        }
+      }
+      .nav-buttons{
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        //transform: translateY(-100%);
+        width: 100%;
+        height: 45px;
+        display: flex;
+
       }
     }
       .clear {
@@ -427,6 +589,44 @@
       }
     }
   }
-
-          
-      
+.feedback-input{
+  &:-moz-placeholder{
+    opacity: 0.5;
+    color: white;
+    font-family: Roboto,sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 45px;
+    @include phone{
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 24px;
+    }
+  }
+  &:-ms-input-placeholder{
+    opacity: 0.5;
+    color: white;
+    font-family: Roboto,sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 45px;
+    @include phone{
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 24px;
+    }
+  }
+  &::-webkit-input-placeholder{
+    opacity: 0.5;
+    color: white;
+    font-family: Roboto,sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 45px;
+    @include phone{
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 24px;
+    }
+  }
+}

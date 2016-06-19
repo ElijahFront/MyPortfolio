@@ -33,6 +33,10 @@ $img : "../img";
   &:hover{
     background-color: $blue;
   }
+  @include tablet{
+    top:20px;
+    right: 20px;
+  }
   @include phone{
       position: static;
       margin-left: auto;

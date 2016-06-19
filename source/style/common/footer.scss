@@ -6,6 +6,21 @@ body{
   @include tablet{
     margin-bottom: 202px;;
   }
+  @include phone{
+    margin-bottom: 345px;
+  }
+}
+.about-body{
+  margin: 0;
+}
+.works-body{
+  margin: 0;
+  @include phone{
+    margin-bottom: 0px;
+  }
+}
+.index-body{
+  margin: 0;
 }
 
 footer{
@@ -17,7 +32,7 @@ footer{
   left: 0;
   bottom: 0;
   width:100%;
-  height:135px;
+  height:185px;
   max-height:155px;
   background-color: rgba(28, 31, 41, 0.85);
   padding-top: 30px;
@@ -62,6 +77,10 @@ footer{
       font-size: 16px;
       font-weight: 300;
       line-height: 24px;
+      @include points(885){
+        font-size: 14px;
+        line-height: 21px;
+      }
     }
   }
   .navigation-map{
@@ -87,6 +106,10 @@ footer{
           font-weight: 400;
           line-height: 24px;
           text-decoration: none;
+          @include points(1354){
+            font-size: 14px;
+            line-height: 21px;
+          }
         }
         &:last-of-type{
           margin-right: 0;
@@ -124,6 +147,9 @@ footer{
         }
       }
     }
+    @include tablet{
+      min-width: 364px;
+    }
   }
   .contacts{
     width: 25%;
@@ -138,7 +164,14 @@ footer{
         font-size: 16px;
         font-weight: 300;
         line-height: 26px;
+        @include points(885){
+          font-size: 14px;
+          line-height: 21px;
+        }
       }
+    }
+    @include tablet{
+      max-width: 195px;
     }
   }
   .copyright{
@@ -161,29 +194,17 @@ footer{
   }
 }
 
-@media all and (max-width: 540px){
-  footer {
-    min-height: 345px;
-    .content {
-      flex-direction: column;
-      flex-wrap: nowrap;
-      margin: 0 auto;
-      padding: 0 30px;
-    }
-    .info, .navigation-map, .contacts{
-      border: none;
-      padding: 0;
-      width:100%;
-      text-align: center;
-      border-bottom:1px solid white;
-    }
-    .contacts{
-      border-bottom: none;
+@media all and (max-width: 1364px){
+  .navigation-map {
+    ul {
+      li {
+        font-size: 14px;
+        line-height: 21px;
+      }
     }
   }
 }
-
-@media all and (min-width: 480px ) and (max-width: 768px){
+@media all and (max-width: 768px){
   footer {
     max-height: 202px;
     height:240px;
@@ -200,6 +221,9 @@ footer{
       border-bottom: 1px solid white;
       p{
         text-align: center;
+        font-size: 14px;
+        font-weight: 300;
+        line-height: 24px;
       }
     }
     .navigation-map, .contacts{
@@ -210,9 +234,27 @@ footer{
     }
     .navigation-map{
       width: 65%;
+      ul{
+        li{
+          margin-right: 31px;
+          a {
+            font-size: 14px;
+            font-weight: 500;
+            line-height: 24px;
+          }
+        }
+      }
     }
     .contacts{
       width: 35%;
+      ul {
+        li{
+          font-size: 14px;
+          font-weight: 300;
+          line-height: 24px;
+        }
+        padding: 0;
+      }
     }
     .contacts{
       padding-right:0;
@@ -220,4 +262,73 @@ footer{
     }
   }
 }
-
+@media all and (max-width: 468px){
+  footer {
+    padding-top: 19px;
+    min-height: 345px;
+    .content {
+      flex-direction: column;
+      flex-wrap: nowrap;
+      margin: 0 auto;
+      padding: 0 30px;
+    }
+    .info, .navigation-map, .contacts{
+      box-sizing: border-box;
+      border: none;
+      padding: 0;
+      min-width:100%;
+      text-align: center;
+      border-bottom:1px solid rgba(white, .7);
+    }
+    .info{
+      padding-bottom: 19px;
+      min-height: 64px;
+      p{
+        font-size: 14px;
+        font-weight: 300;
+        line-height: 24px;
+      }
+    }
+    .contacts{
+      border-bottom: none;
+      padding-top: 17px;
+      ul li{
+        font-size: 14px;
+        font-weight: 300;
+        line-height: 24px;
+      }
+    }
+    .navigation-map{
+      padding-top: 17px;
+      padding-bottom: 17px;
+      height: auto;
+      min-height: 105px;
+      ul{
+        margin-bottom: 18px;
+        li{
+          margin-right: 10px;
+          a{
+            font-size: 14px;
+            font-weight: 500;
+            line-height: 24px;
+          }
+        }
+      }
+      .social{
+        margin: 0 auto;
+      }
+    }
+    .copyright{
+      box-sizing: border-box;
+      height: 57px;
+      padding-top: 7px;
+      padding-left: 34px;
+      padding-right: 34px;
+      span {
+        font-size: 14px;
+        font-weight: 300;
+        line-height: 24px;
+      }
+    }
+  }
+}

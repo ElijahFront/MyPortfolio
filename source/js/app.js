@@ -24,4 +24,14 @@ if ($('#log').hasClass('tapped')) {
     setTimeout(change('flex', 'none', ''), 1000)
   });
 }
-
+  /* Заполнение шкалы скилов
+ var circle = document.getElementById('circle'),
+     btn = document.getElementById('start');
+  btn.onclick = function () {
+    var input = document.getElementById("text").value;
+    var innerInp = (input*314)/100;
+    var strInner = innerInp.toString();
+    console.log(strInner);
+    circle.style.strokeDasharray = strInner + "px 314px";
+  };
+  */

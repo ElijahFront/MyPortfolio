@@ -9,3 +9,8 @@
     @content
   }
 }
+@mixin points($scr){
+  @media all and (max-width: $scr + 'px') {
+    @content
+  }
+}

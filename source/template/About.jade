@@ -1,7 +1,7 @@
 doctype html
 html
     include common/_head
-    body
+    body.about-body
         include common/main-night
         section.info-about-me
             h1 Обо мне
@@ -24,6 +24,13 @@ html
                     h3 Frontend
                     .diagrams
                         .dia.html5
+                            //Разметка для регулировки уровня скила соответственно значению в процентах, указанному в input
+                            //<svg class="circle" width="120" height="120">
+                            //<circle r="50" cx="-60" cy="60"></circle>
+                            //<circle id='circle' style="stroke-dasharray: 70px 314px" r="50" cx="-60" cy="60"></circle>
+                            //</svg>
+                            //input(type='text')#text
+                            //button(style='width:50px; height:20px')#start
                             img(src='./assets/img/skill-html.png')
                         .dia.css3
                             img(src='./assets/img/skill-css.png')
