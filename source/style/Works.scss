@@ -86,7 +86,9 @@ html{
   width:auto;
   max-width: 319px;
   @include tablet{
-
+    width:auto;
+    max-width: 90%;
+    height: 100%;
   }
   @include phone{
     padding-top: 30px;
@@ -103,8 +105,15 @@ html{
     font-weight: 600;
     line-height: 38px;
     text-transform: uppercase;
+    @include tablet{
+      margin-top: 46px;
+      margin-bottom: 48px;
+      width: 100%;
+      //min-width: 457px;
+    }
     @include phone{
       margin-bottom: 42px;
+      margin-top: 0;
     }
     &:after{
       display: block;
@@ -138,6 +147,9 @@ html{
     background-color: #004cd1;
     color: #FFFFFF;
     transition-duration: 200ms;
+    @include tablet{
+      margin-top: 29px;
+    }
     @include phone{
       width: 185px;
       margin-top: 17px;
@@ -267,6 +279,8 @@ html{
   z-index: 0;
 }
 .gossips {
+  overflow: hidden;
+  position: relative;
   box-sizing: border-box;
   height: 1353px;
   width: 100%;
@@ -301,6 +315,7 @@ html{
       font-weight: 400;
       line-height: 56px;
       height: 175px;
+      margin-bottom: 50px;
     }
     @include phone{
       height: 82px;
@@ -377,6 +392,23 @@ html{
       @include phone{
         font-size: 14px;
       }
+    }
+  }
+  .map__lighthouse{
+    position: absolute;
+    bottom:0;
+    right: 0px;
+    width: 588px;
+    height: 984px;
+    background: url('../img/lighthouse.png') center no-repeat;
+    background-size: contain;
+    @include tablet{
+      right: -200px;
+      bottom: -250px;
+    }
+    @include phone{
+      right:-340px;
+      bottom: -150px;
     }
   }
   .feedback {

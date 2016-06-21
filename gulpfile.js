@@ -30,7 +30,8 @@ $.gulp.task('default', $.gulp.series(
     'copy.image',
     'css.foundation', 
     'sprites',
-    'fonts'
+    'fonts',
+    'favicon'  
   ),
   $.gulp.parallel(
     'watch',

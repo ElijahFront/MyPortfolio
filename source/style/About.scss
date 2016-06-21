@@ -44,6 +44,10 @@
     background-size: contain;
     height: 35px;
     width:40px;
+    @include phone{
+      height: 25px;
+      width: 25px;
+    }
   }
   .logo-about{
     max-width:459px;
@@ -302,7 +306,11 @@
         }
       }
       .diagrams{
+        box-sizing: border-box;
         margin-top: 19px;
+        @include phone{
+          text-align: center;
+        }
       }
     }
     .workflow{
@@ -319,8 +327,8 @@
       }
       &:after{
         position: absolute;
-        top:50%;
-        left:50%;
+        top:53%;
+        left:53%;
         transform: translate(-50%, -50%);
 
         color: #243994;
@@ -334,12 +342,17 @@
         width:100%;
         height:100%;
       }
-
+      }
     }
-  }
+
 }
 .advantages__wrapper{
   width:90%;
+}
+.css3, .mysql, .gulp{
+  @include phone{
+    margin-right: 0 !important;
+  }
 }
 .html5:after{
   content: 'HTML5';
@@ -381,7 +394,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
-
+  @include phone{
+    margin-top: 300px;
+  }
 }
 .map-wrapper{
   width: 100%;
@@ -393,10 +408,11 @@
   top:50%;
   left:50%;
   transform: translate(-50%, -70%);
-  width: 580px;
+  width: 47%;
+  max-width: 580px;
   height: 283px;
   background-color: rgba(white, .7);
-  z-index: 1000000000;
+  z-index: 100000;
   h2{
     margin: 0;
     margin-top: 37px;
@@ -409,6 +425,14 @@
     font-weight: 400;
     line-height: 41px;
     text-transform: uppercase;
+    @include tablet{
+      font-size: 30px;
+      font-weight: 400;
+      line-height: 41px;
+    }
+    @include phone{
+      margin-top: 25px;
+    }
     &:after{
       display: block;
       content: '';
@@ -421,15 +445,35 @@
       border:1.5px solid rgba(#474b57, .5);
     }
   }
+  @include points(954){
+    min-width: 600px;
+  }
+  @include tablet{
+    min-width: 20px;
+    height: 394px;
+  }
+  @include phone{
+    height: 300px;
+    top: -300px;
+    left: 0;
+    width: 100%;
+    transform: none;
+  }
 }
 .map__contacts_list{
   box-sizing: border-box;
   margin: 0;
-  padding: 0;
-  list-style: none;
   margin-top: 62px;
+  margin-left: 19px;
+  padding: 0;
+  max-height: calc(100% - 62px);
+  list-style: none;
   display: flex;
+  flex-direction: column;
   flex-wrap: wrap;
+  @include phone{
+    margin-top: 42px;
+  }
 }
 .map__list_item{
   box-sizing: border-box;
@@ -443,7 +487,7 @@
   font-weight: 500;
   line-height: 45px;
   position: relative;
-  margin-bottom: 50px;
+  margin-bottom: 30px;
   &:before{
     display: block;
     content: '';
@@ -452,6 +496,21 @@
     left: 0px;
     width: 45px;
     height: 45px;
+    @include phone{
+      width: 34px;
+      height: 34px;
+      top:25px;
+      left: 15px;
+      transform: translate(-50%, -50%);
+    }
+  }
+  @include tablet{
+    margin-bottom: 20px;
+  }
+  @include phone{
+    margin-bottom: 10px;
+    padding-left: 43px;
+    line-height: 34px;
   }
 }
 @mixin listit($name, $icon){
@@ -464,3 +523,6 @@
 @include listit(mail, envelope_n);
 @include listit(tel, phone_n);
 @include listit(adress, map_n);
+//.map__list_item-mail{
+//  margin-bottom: 0;
+//}
