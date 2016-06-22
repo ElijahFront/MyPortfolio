@@ -49,12 +49,11 @@ if ($('#log').hasClass('tapped')) {
       left.height(right.height());
     }
   }
-  $(window).resize(function () {
+
     if ($(window).width() > 760){
       evenBlocks();
     } else {
       $('.info-about-me').css('height', 'auto');
       $('.advantages').css('height', 'auto');
     }
-  });
 

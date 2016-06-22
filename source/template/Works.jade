@@ -6,7 +6,7 @@ html
         <p class="browsehappy">Вы используете <strong>устаревший</strong> браузер. Пожалуйста <a href="http://browsehappy.com/">обновите его</a></p>
         <![endif]-->
 
-    section.main-night#main-top
+    section.main-night#main-top.works-night
         .social
             a(href='http://vk.com/elijah_first', class='').
                 <?xml version="1.0" encoding="utf-8"?>
@@ -166,7 +166,7 @@ section.gossips
                 textarea(placeholder='Ваше сообщение').feedback-input
                 .nav-buttons
                     input.submit-btn(type='submit')
-                    a.submit-btn.clear(href='#') Очистить
+                    input(type="reset" value="Очистить").submit-btn.clear
 
             .arrow.arrow-up
                 a(href='#main-top')

@@ -3,20 +3,23 @@ $btn-dark: #083c96;
 .block-login {
   color: #FFFFFF;
   box-sizing: border-box;
-  margin-top: 143px;
+  //margin-top: 143px;
   width: 35%;
   max-width: 380px;
   min-width: 320px;
   height: 407px;
   background-color: rgba(28, 31, 41, 0.5);
-  margin-left: auto;
-  margin-right: auto;
+  //margin-left: auto;
+  //margin-right: auto;
   display: none;
   flex-direction: column;
   align-items: center;
   padding-top: 36px;
-  position: relative;
-  h1 {
+  position: absolute;
+  top: 0%;
+  left: 50%;
+  transform: translate(-50%, 40%);
+  h2 {
     margin: 0;
     color: white;
     font-family: SansusWebissimo, sans-serif;
@@ -32,7 +35,7 @@ $btn-dark: #083c96;
   }
   .human-check {
     display: inline-block;
-    position: relative;
+    //position: relative;
   }
   @include tablet{
     width: 45%;
@@ -167,17 +170,58 @@ $btn-dark: #083c96;
 .login__form_label-sure, .login__form_label-not-sure{
   display: inline-block;
   position: relative;
+  margin-right: 40px;
+}
+.login__form_label-not-sure{
+  margin-right: 0;
+}
+.login__form_label-text{
+  position: relative;
   &:before{
     content: '';
-    display: none;
+    display: block;
     position: absolute;
+    left: -29px;
     top: 0;
-    left: -5px;
-    width:20px;
-    height: 20px;
-    background-color: white;
   }
 }
+.form__label_check-text{
+  &:before{
+    width: 20px;
+    height: 20px;
+    background-color: #0548be;
+    content: '\f000';
+    font-family: fontawesome;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: normal;
+    color: white;
+  }
+}
+.human-check:checked .form__label_check-text{
+  &:before{
+    color: white;
+  }
+}
+.form__label_sure-text, .form__label_not_sure-text{
+  &:before{
+    content: '';
+    display: block;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: white;
+    //box-shadow: inset 0 0 13px white;
+  }
+}
+.not-robot:checked + .form__label_sure-text{
+  &:before{
+    background-color: #0548be;
+    box-shadow: inset 0 0 0 5px #fff;
+  }
+}
+
+input
   .login__sure_wrapper{
     margin-top: 10px;
   }
@@ -194,6 +238,8 @@ $btn-dark: #083c96;
     position: absolute;
     visibility: hidden;
     opacity: 0;
+    left: -29px;
+    top: 0;
     width: 20px;
     height: 20px;
     background-color: white;

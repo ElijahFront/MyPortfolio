@@ -9,7 +9,7 @@
   height: 100vh;
   background: url('../img/photo-night.jpg') center no-repeat;
   background-size: cover;
-  padding-top:153px;
+  //padding-top:153px;
   .social{
     position: absolute;
     top:31px;
@@ -37,6 +37,7 @@
     }
   }
   .menu{
+    display: block;
     position: absolute;
     right:31px;
     top:28px;
@@ -50,6 +51,10 @@
     }
   }
   .logo-about{
+    position: absolute;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
     max-width:459px;
     padding-top: 20px;
     background: url('../img/star.png');
@@ -84,17 +89,14 @@
 
   }
   .arrow{
+    position: absolute;
+    top: 75%;
+    left:50%;
+    margin-left: -13.5px;
     width: 27px;
     height: 20px;
-    position: relative;
-    margin-top:133px;
-    margin-left: auto;
-    margin-right: auto;
     text-align: center;
     a{
-      position: absolute;
-      top: 0;
-      left: 0;
       width: 100%;
       height: 100%;
       display: block;
@@ -105,7 +107,7 @@
 .info-about-me, .advantages{
   box-sizing: border-box;
   position: relative;
-  margin-top: -340px;
+  //margin-top: -340px;
   min-height:1010px;
   height:auto;
   width: 50%;
@@ -121,7 +123,7 @@
 }.info-about-me__bg{
    width:100%;
    position: absolute;
-   top:-140px;
+   bottom: 6px;
    left: 0;
    height: 140px;
    background: url('../img/bg-cream.svg') center no-repeat;
@@ -136,36 +138,54 @@
   z-index: 2;
   position: relative;
   float: left;
-  background: url('../img/about_bg_left.svg') center no-repeat;
-  background-size: cover;
+  background-color: #f2f0e8;
   @include tablet{
     //background: url('../img/bg-cream.svg') -50% -50% no-repeat #f3f0e8;
     background-color: #f3f0e8;
-    margin-top: -30px;
+    //margin-top: -260px;
     height:auto;
     min-height: 710px;
     float: none;
   }
   h1{
     margin: 0;
-    margin-top: 180px;
+    margin-top: -15px;
     color: #373e42;
     font-family: SansusWebissimo, sans-serif;
     font-size: 44px;
     font-weight: 400;
     line-height: 66px;
     text-transform: uppercase;
+    width: 185px;
+    height: 121px;
+    padding-top: 30px;
+    background: url('../img/star4.png') top no-repeat;
+    background-size: contain;
     @include tablet{
-      margin-top: -5px;
+      margin-top: 5px;
       font-size: 49px;
       font-weight: 400;
       line-height: 52px;
     }
+    @media all and(min-width: 1800px) {
+      position: absolute;
+      top:-26px;
+      left: 79px;
+      font-size: 63px;
+      font-weight: 400;
+      line-height: 66px;
+      width: 262px;
+    }
   }
+  @media all and (min-width: 1800px) {
+    align-items: flex-end;
+    padding-right: 10px;
+  }
+
   .about-pict{
     max-width:443px;
     max-height:390px;
-    margin-top: 59px;
+    //margin-top: 59px;
     @include tablet{
       //width: 60%;
       max-width: 473px;
@@ -174,7 +194,7 @@
   }
   .text-about{
     text-align: center;
-    width: 70%;
+    width: 100%;
     max-width: 440px;
     height:auto;
     margin-bottom: 20px;
@@ -228,10 +248,9 @@
   padding-right: 7px;
   min-height:1006px;
   height:auto;
-  transform: translateY(4px);
+  //transform: translateY(4px);
   float: right;
-  background: url('../img/about_bg_right.svg') center no-repeat;
-  background-size: cover;
+  background-color: #f4f5f0;
   @include tablet{
     //background: url('../img/bg-cream.svg') 0 -10% no-repeat;
     float: none;
@@ -245,7 +264,7 @@
     text-align: center;
     max-width: 253px;
     margin: 0;
-    margin-top: 180px;
+    margin-top: -18px;
     color: #474b57;
     font-family: SansusWebissimo, sans-serif;
     font-size: 26px;
@@ -346,14 +365,33 @@
     }
 
 }
+.info__inner-wrapper{
+  text-align: center;
+}
+.mysql{
+  @include points(530){
+    margin-right: 0 !important;
+  }
+}
 .advantages__wrapper{
   width:90%;
+  margin-bottom: 30px;
 }
 .css3, .mysql, .gulp{
   @include phone{
     margin-right: 0 !important;
   }
 }
+.nodejs{
+  @include points(620){
+    margin-right: 0 !important;
+  }
+}
+//@media all and (max-width: 481px) and (min-width: 469px) {
+//  .nodejs{
+//    margin-right: 37px !important;
+//  }
+//}
 .html5:after{
   content: 'HTML5';
 }
@@ -384,7 +422,39 @@
 .bower:after{
   content: 'Bower';
 }
+.about__wrapper{
+  width: 100%;
+  height:auto;
+  position: relative;
+  &:after{
+    content: '';
+    display: table;
+    clear: both;
+  }
+  @include tablet{
 
+  }
+}
+.bg__about{
+  position: absolute;
+  bottom: 100%;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height:12.5rem;
+  @include tablet{
+    bottom: 100%;
+  }
+}
+.bg__about-triangle_right{
+  fill: #f4f5f0;
+  @include tablet{
+    fill: #f2f0e8;
+  }
+}
+.bg__about-triangle_left{
+  fill: #f2f0e8;
+}
 .map{
   position: relative;
   //padding-bottom: 153px;

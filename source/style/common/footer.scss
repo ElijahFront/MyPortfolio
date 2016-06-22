@@ -158,15 +158,18 @@ footer{
     ul{
       padding-left: 30px;
       li{
-        color: white;
-        opacity:0.8;
-        font-family: Roboto, sans-serif;
-        font-size: 16px;
-        font-weight: 300;
-        line-height: 26px;
-        @include points(885){
-          font-size: 14px;
-          line-height: 21px;
+        a {
+          color: white;
+          opacity: 0.8;
+          font-family: Roboto, sans-serif;
+          font-size: 16px;
+          font-weight: 300;
+          line-height: 26px;
+          text-decoration: none;
+          @include points(885) {
+            font-size: 14px;
+            line-height: 21px;
+          }
         }
       }
     }
@@ -249,9 +252,13 @@ footer{
       width: 35%;
       ul {
         li{
-          font-size: 14px;
-          font-weight: 300;
-          line-height: 24px;
+          a {
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 300;
+            line-height: 24px;
+            color: white;
+          }
         }
         padding: 0;
       }

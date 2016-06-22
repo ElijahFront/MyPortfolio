@@ -169,6 +169,12 @@ html{
     }
   }
 }
+.works-night .logo-about{
+  top:39% !important;
+}
+.works-night .arrow{
+  top:60% !important;
+}
 .slider__site-picture{
   //float: right;
   height: 70%;
@@ -331,11 +337,13 @@ html{
     display: flex;
     max-width: 742px;
     justify-content: space-between;
+    margin-bottom: 69px;
     @include tablet{
       width:92%;
     }
     @include phone{
       flex-direction:column;
+      margin-bottom: 37px;
     }
   }
   .logo {
@@ -374,11 +382,11 @@ html{
       line-height: 24px;
     }
   }
-  .Dima {
+  .Zar {
     box-sizing: border-box;
-    padding-right: 26px;
+    margin-left: 26px;
     @include tablet{
-      padding-right: 17px;
+      margin-left: 17px;
     }
   }
   .author{
@@ -402,9 +410,16 @@ html{
     height: 984px;
     background: url('../img/lighthouse.png') center no-repeat;
     background-size: contain;
+    @include points(1000){
+      right: -100px;
+    }
     @include tablet{
       right: -200px;
       bottom: -250px;
+    }
+    @include points(560){
+      right: -280px;
+      bottom: -70px;
     }
     @include phone{
       right:-340px;
@@ -415,7 +430,6 @@ html{
     box-sizing: border-box;
     padding-top: 40px;
     position: relative;
-    margin-top: 69px;
     width: 348px;
     height: 459px;
     background-color: rgba(255, 255, 255, 0.05);
@@ -426,7 +440,6 @@ html{
       padding-top: 35px;
     }
     @include phone{
-      margin-top: 37px;
       width:90%;
       height: 422px;
     }
@@ -530,29 +543,33 @@ html{
         background-color: rgba(255, 255, 255, 0.07);
         border: none;
         padding-left: 18px;
+        padding-top: 15px;
         &::-webkit-input-placeholder {
+          margin-top: -15px;
           opacity: 0.5;
           color: white;
           font-family: Roboto, sans-serif;
           font-size: 16px;
           font-weight: 300;
-          line-height: 45px;
+          //line-height: 45px;
         }
         &:-ms-input-placeholder {
+          margin-top: -15px;
           opacity: 0.5;
           color: white;
           font-family: Roboto;
           font-size: 16px;
           font-weight: 300;
-          line-height: 45px;
+          //line-height: 45px;
         }
         &:-moz-placeholder {
+          margin-top: -15px;
           opacity: 0.5;
           color: white;
           font-family: Roboto;
           font-size: 16px;
           font-weight: 300;
-          line-height: 45px;
+          //line-height: 45px;
         }
       }
       .submit-btn {
@@ -622,6 +639,7 @@ html{
     }
   }
 .feedback-input{
+  color: rgba(white, .88);
   &:-moz-placeholder{
     opacity: 0.5;
     color: white;
