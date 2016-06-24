@@ -1,0 +1,77 @@
+.preloader{
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('../img/night_prel_bg.jpg') center no-repeat;
+  background-size: cover;
+  z-index: 999999999;
+  display: flex;
+  justify-content:center;
+  align-items:center;
+}
+.preloader__content{
+  width: 160px;
+  height: 160px;
+  display: flex;
+  justify-content:center;
+  align-items: center;
+  position: relative;
+}
+.preloader__circle_big{
+  stroke: white;
+  animation: fillCircle 1s infinite;
+  transform: rotate(-90deg);
+}
+//.preloader__circle_small{
+//  fill: white;
+//}
+.preloader__svg{
+  position: absolute;
+  top:50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.preloader__circle_outer{
+  width: 110px;
+  height: 110px;
+  position: relative;
+  border-radius: 50%;
+  animation: rotateBall 1s infinite;
+  &:before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left:calc(50% - 5px);
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: white;
+  }
+}
+.preloader__text{
+  color: white;
+  position: absolute;
+  top:47%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+@keyframes  rotateBall{
+  from{
+    transform: rotate(0deg);
+  }
+  to{
+    transform: rotate(720deg);
+  }
+}
+@keyframes fillCircle{
+  from{
+    stroke-dasharray: 0px 157px;
+  }
+  to{
+    stroke-dasharray: 157px 157px;
+  }
+}

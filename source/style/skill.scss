@@ -1,10 +1,12 @@
-circle{
-  transform: rotate(-90deg);
-  fill: rgba(0,0,0,0);
-  stroke-width: 20;
-  stroke: #dfdcd5;
-  &:last-of-type{
-    stroke: #1057d1;
+.circle{
+  circle {
+    transform: rotate(-90deg);
+    fill: rgba(0, 0, 0, 0);
+    stroke-width: 20;
+    stroke: #dfdcd5;
+    &:last-of-type {
+      stroke: #1057d1;
+    }
   }
 }
 @include skill(html5, 92)

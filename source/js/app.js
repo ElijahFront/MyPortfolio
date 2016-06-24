@@ -1,3 +1,26 @@
+//preloader
+
+$(document).ready(function () {
+  var inText = $('#prelText'),
+      counter = 0;
+  setInterval(function () {
+    inText.text(counter + '%');
+    counter++;
+    if (counter >= 100){
+      counter = 100;
+    }
+  }, 10)
+});
+
+$(window).load(function () {
+  $('#prelText').text('100%');
+  setTimeout(function () {
+    $('#preloader').hide();
+    $('#preloader').css('display', 'none')
+  }, 1000)
+});
+
+
 
   var change = function (disp, disp2,cl) {
   $('.block').css('display', disp);
