@@ -96,9 +96,9 @@ $('#menu__open').on('click', function (e) {
       menu = $('.menu'),
       content = $('.menu__content');
   
-  menu.show();
+  menu.css('display', 'flex');
   menuL.animate({
-    width: '50%'
+    'width' : '50%'
   }, 400, function () {
     d1.resolve();
     d1.done(function () {
@@ -107,7 +107,7 @@ $('#menu__open').on('click', function (e) {
 
   });
   menuR.animate({
-    width: '50%'
+    'width' : '50%'
   }, 400, function () {
     d2.resolve();
     d2.done(function () {
@@ -145,7 +145,7 @@ $('#menu__close').on('click', function (e) {
   content.hide();
 
   menuL.animate({
-    width: '0%'
+    'width' : '0'
   }, 400, function () {
     d11.resolve();
     d11.done(function () {
@@ -153,7 +153,7 @@ $('#menu__close').on('click', function (e) {
     });
   });
   menuR.animate({
-    width: '0%'
+    'width' : '0'
   }, 400, function () {
     d12.resolve();
     d12.done(function () {
@@ -177,3 +177,29 @@ $('#menu__close').on('click', function (e) {
 
 //SLIDER
 
+$('#sliderUp').on('click', function (e) {
+  e.preventDefault();
+  var items = $('.slider__pict'),
+      ActItem = $('.slider__pict.activ'),
+      counter = 1,
+      nextItem = items.eq(counter);
+
+  if (counter >= items.length){
+    counter = 0;
+  }
+
+
+  ActItem.animate({
+    'top' : '-55%'
+  }, 300);
+
+  nextItem.animate({
+    'top' : '50%'
+  }, 300, function () {
+    ActItem.removeClass('activ').css('top', '155%');
+    nextItem.addClass('activ');
+  });
+
+  counter += counter;
+
+});

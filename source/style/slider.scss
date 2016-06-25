@@ -1,11 +1,11 @@
 
-.btn-up .slider__sites-pictures{
-  top:150%;
+.btn-up .slider__pict{
+  top:155%;
 }
-.btn-down .slider__sites-pictures{
-  top:-50%;
+.btn-down .slider__pict{
+  top:-55%;
 }
-.slider__sites-pictures.activ{
+.slider__pict.activ{
   top:50%;
   left: 50%;
   transform: translate(-50%, -50%);
