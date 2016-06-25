@@ -174,3 +174,6 @@ $('#menu__close').on('click', function (e) {
   });
 
 });
+
+//SLIDER
+
