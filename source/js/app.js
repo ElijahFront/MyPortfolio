@@ -177,21 +177,24 @@ $('#menu__close').on('click', function (e) {
 
 //SLIDER
 
-(function () {
+(function slider() {
   var counter = 1;
   $('#sliderUp').on('click', function (e) {
     e.preventDefault();
     var items = $('.btn-up .slider__pict'),
-        ActItem = $('.btn-up .slider__pict.activ'),
+        ActItem = $('.btn-up .slider__pict.active'),
         anotherItems = $('.btn-down .slider__pict'),
-        anotherActItem = $('.btn-down .slider__pict.activ');
+        anotherActItem = $('.btn-down .slider__pict.active'),
+        descrItems = $('.slider__description_item'),
+        descrActItem = $('.slider__description_item.active');
 
 
     if (counter >= items.length){
       counter = 0;
     }
     var nextItem = items.eq(counter),
-        anotherNextItem = anotherItems.eq(-counter + 1);
+        anotherNextItem = anotherItems.eq(-counter + 1),
+        nextDescrItem = descrItems.eq(counter - 1);
 
     ActItem.animate({
       'top' : '-55%'
@@ -200,21 +203,41 @@ $('#menu__close').on('click', function (e) {
       'top': '155%'
     }, 300);
 
+    descrActItem.animate({
+      'display' : 'none'
+    }, 150);
+
+    nextDescrItem.animate({
+      'display': 'block'
+    }, 150, function () {
+      descrActItem.removeClass('active');
+      nextDescrItem.addClass('active');
+    });
+
+
+    function changeSlide(src){
+      $('.slider__main-picture').attr('src', src);
+    }
+
     nextItem.animate({
       'top' : '50%'
     }, 300, function () {
-      ActItem.removeClass('activ').css('top', '155%');
-      nextItem.addClass('activ');
+      var src = ActItem.find('img').attr('src');
+      changeSlide(src);
+      ActItem.removeClass('active').css('top', '155%');
+      nextItem.addClass('active');
+
     });
     anotherNextItem.animate({
       'top': '50%'
     }, 300, function () {
-      anotherActItem.removeClass('activ').css('top', '-55%');
-      anotherNextItem.addClass('activ');
+      anotherActItem.removeClass('active').css('top', '-55%');
+      anotherNextItem.addClass('active');
     });
 
     counter++;
-    console.log(counter, -counter);
 
   });
+  
+  
 }());
