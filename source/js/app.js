@@ -1,4 +1,4 @@
-//preloader
+//PRELOADER
 
 $(document).ready(function () {
   var inText = $('#prelText'),
@@ -9,12 +9,13 @@ $(document).ready(function () {
     if (counter >= 100){
       counter = 100;
     }
-  }, 10)
+  }, 47)
 });
 
 $(window).load(function () {
-  $('#prelText').text('100%');
+
   setTimeout(function () {
+    $('#prelText').text('100%');
     $('#preloader').hide();
     $('#preloader').css('display', 'none')
   }, 1000)
@@ -80,3 +81,96 @@ if ($('#log').hasClass('tapped')) {
       $('.advantages').css('height', 'auto');
     }
 
+
+//MENU
+
+$('#menu__open').on('click', function (e) {
+
+  var d1 = $.Deferred();
+  var d2 = $.Deferred();
+
+  e.preventDefault();
+
+  var menuL = $('.menu__left'),
+      menuR = $('.menu__right'),
+      menu = $('.menu'),
+      content = $('.menu__content');
+  
+  menu.show();
+  menuL.animate({
+    width: '50%'
+  }, 400, function () {
+    d1.resolve();
+    d1.done(function () {
+      console.log('d1 is done')
+    });
+
+  });
+  menuR.animate({
+    width: '50%'
+  }, 400, function () {
+    d2.resolve();
+    d2.done(function () {
+      console.log('d2 is done')
+    });
+
+  });
+  // d1.done(function () {
+  //   console.log('d1 is done')
+  // });
+  // d2.done(function () {
+  //   console.log('d2 is done')
+  // });
+
+  $.when(d1, d2).done(function () {
+    content.show();
+    $('#menu__close').css('display', 'block');
+    $('#menu__open').css('display','none');
+  });
+
+});
+///Closing the menu
+
+$('#menu__close').on('click', function (e) {
+  e.preventDefault();
+
+  var d11 = $.Deferred();
+  var d12 = $.Deferred();
+
+  var menuL = $('.menu__left'),
+      menuR = $('.menu__right'),
+      menu = $('.menu'),
+      content = $('.menu__content');
+
+  content.hide();
+
+  menuL.animate({
+    width: '0%'
+  }, 400, function () {
+    d11.resolve();
+    d11.done(function () {
+      console.log('d11 is done')
+    });
+  });
+  menuR.animate({
+    width: '0%'
+  }, 400, function () {
+    d12.resolve();
+    d12.done(function () {
+      console.log('d12 is done')
+    });
+  });
+  // d11.done(function () {
+  //   console.log('d11 is done')
+  // });
+  // d12.done(function () {
+  //   console.log('d12 is done')
+  // });
+  $.when(d11, d12).done(function () {
+    $('#menu__close').css('display', 'none');
+    $('#menu__open').css('display', 'block');
+    menu.css('display', 'none');
+
+  });
+
+});
