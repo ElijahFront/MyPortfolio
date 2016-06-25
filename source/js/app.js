@@ -177,29 +177,44 @@ $('#menu__close').on('click', function (e) {
 
 //SLIDER
 
-$('#sliderUp').on('click', function (e) {
-  e.preventDefault();
-  var items = $('.slider__pict'),
-      ActItem = $('.slider__pict.activ'),
-      counter = 1,
-      nextItem = items.eq(counter);
-
-  if (counter >= items.length){
-    counter = 0;
-  }
+(function () {
+  var counter = 1;
+  $('#sliderUp').on('click', function (e) {
+    e.preventDefault();
+    var items = $('.btn-up .slider__pict'),
+        ActItem = $('.btn-up .slider__pict.activ'),
+        anotherItems = $('.btn-down .slider__pict'),
+        anotherActItem = $('.btn-down .slider__pict.activ');
 
 
-  ActItem.animate({
-    'top' : '-55%'
-  }, 300);
+    if (counter >= items.length){
+      counter = 0;
+    }
+    var nextItem = items.eq(counter),
+        anotherNextItem = anotherItems.eq(-counter + 1);
 
-  nextItem.animate({
-    'top' : '50%'
-  }, 300, function () {
-    ActItem.removeClass('activ').css('top', '155%');
-    nextItem.addClass('activ');
+    ActItem.animate({
+      'top' : '-55%'
+    }, 300);
+    anotherActItem.animate({
+      'top': '155%'
+    }, 300);
+
+    nextItem.animate({
+      'top' : '50%'
+    }, 300, function () {
+      ActItem.removeClass('activ').css('top', '155%');
+      nextItem.addClass('activ');
+    });
+    anotherNextItem.animate({
+      'top': '50%'
+    }, 300, function () {
+      anotherActItem.removeClass('activ').css('top', '-55%');
+      anotherNextItem.addClass('activ');
+    });
+
+    counter++;
+    console.log(counter, -counter);
+
   });
-
-  counter += counter;
-
-});
+}());
