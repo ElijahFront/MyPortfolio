@@ -97,24 +97,11 @@ $('#menu__open').on('click', function (e) {
       content = $('.menu__content');
   
   menu.show();
-  menuL.animate({
-    width: '50%'
-  }, 400, function () {
-    d1.resolve();
-    d1.done(function () {
-      console.log('d1 is done')
-    });
+  // menuL.css('width', '50%');
+  // menuR.css('width', '50%');
+  menuL.addClass('menu__left_turn');
+  menuR.addClass('menu__right_turn');
 
-  });
-  menuR.animate({
-    width: '50%'
-  }, 400, function () {
-    d2.resolve();
-    d2.done(function () {
-      console.log('d2 is done')
-    });
-
-  });
   // d1.done(function () {
   //   console.log('d1 is done')
   // });
@@ -122,11 +109,11 @@ $('#menu__open').on('click', function (e) {
   //   console.log('d2 is done')
   // });
 
-  $.when(d1, d2).done(function () {
+ setTimeout(function () {
     content.show();
     $('#menu__close').css('display', 'block');
     $('#menu__open').css('display','none');
-  });
+  }, 400);
 
 });
 ///Closing the menu
@@ -144,33 +131,37 @@ $('#menu__close').on('click', function (e) {
 
   content.hide();
 
-  menuL.animate({
-    width: '0%'
-  }, 400, function () {
-    d11.resolve();
-    d11.done(function () {
-      console.log('d11 is done')
-    });
-  });
-  menuR.animate({
-    width: '0%'
-  }, 400, function () {
-    d12.resolve();
-    d12.done(function () {
-      console.log('d12 is done')
-    });
-  });
+  menuL.removeClass('menu__left_turn');
+  menuR.removeClass('menu__right_turn');
   // d11.done(function () {
   //   console.log('d11 is done')
   // });
   // d12.done(function () {
   //   console.log('d12 is done')
   // });
-  $.when(d11, d12).done(function () {
+  setTimeout(function () {
     $('#menu__close').css('display', 'none');
     $('#menu__open').css('display', 'block');
     menu.css('display', 'none');
 
-  });
+  }, 400);
 
 });
+
+
+// MOUSE PARALLAX
+
+$(window).on('mousemove', function(e){
+  var mouseX = e.pageX,
+      mouseY = e.pageY,
+      w = (window.innerWidth/2),  // для изменения начальной точки центра на середину окна
+      h = (window.innerHeight/2),
+      MoveX = ((w*0.01) - mouseX)*0.05,
+      MoveY = ((h*0.01) - mouseY)*0.05;
+
+      //console.log(mouseX, mouseY + ';;;' + MoveX, MoveY);
+
+  $('.mountains').css({
+  'transform' : 'translate3d(' + MoveX + 'px, ' + MoveY + 'px, 0)'});  // the main idea is here. it would also be conscious to set varieties out of the 'transform3d' property
+
+  });
