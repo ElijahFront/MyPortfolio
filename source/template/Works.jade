@@ -89,12 +89,12 @@ html
     .slider__wrapper
         .slider__work-description#works-anchor
             ul.slider__description_list
-                li.slider__description_item
+                li.slider__description_item.active
                     .slider__work-description_info
                         h2.name Первый
                         span.used-technologies HTML5, CSS3, JavaScript
                         a.visit-site(href='#') Посмотреть сайт
-                li.slider__description_item.active
+                li.slider__description_item
                     .slider__work-description_info
                         h2.name Второй
                         span.used-technologies HTML5, CSS3, JavaScript
@@ -112,14 +112,14 @@ html
 
         .slider__site-picture
             .slider__picture-wrapper
-                img(src='./assets/img/slider-works/Number 2 Orange.png').slider__main-picture
+                img(src='./assets/img/slider-works/First.jpg').slider__main-picture
         .slider__controls
             .slider__move-btn.btn-up
                 .slider__pictures-wrapper
                 ul.slider__pictures_list
-                    li.slider__pict.active
-                        img(src="./assets/img/slider-works/First.jpg").slider__sites-pictures
                     li.slider__pict
+                        img(src="./assets/img/slider-works/First.jpg").slider__sites-pictures
+                    li.slider__pict.active
                         .slider__pictures-wrapper
                         img(src="./assets/img/slider-works/Number 2 Orange.png").slider__sites-pictures
                     li.slider__pict
