@@ -48,6 +48,9 @@ h1, h2, h3{
   margin-left: 4%;
   margin-right: 6%;
   min-height: 100%;
+  @include points(1060){
+    width: 20%;
+  }
   @include tablet{
     display: none;
   }

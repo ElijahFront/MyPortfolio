@@ -95,19 +95,32 @@ $('#menu__open').on('click', function (e) {
       menuR = $('.menu__right'),
       menu = $('.menu'),
       content = $('.menu__content');
-  
+
   menu.show();
   // menuL.css('width', '50%');
   // menuR.css('width', '50%');
   menuL.addClass('menu__left_turn');
   menuR.addClass('menu__right_turn');
 
-  // d1.done(function () {
-  //   console.log('d1 is done')
-  // });
-  // d2.done(function () {
-  //   console.log('d2 is done')
-  // });
+  menu.css('display', 'flex');
+  menuL.animate({
+    'width' : '50%'
+  }, 400, function () {
+    d1.resolve();
+    d1.done(function () {
+      console.log('d1 is done')
+    });
+
+  });
+  menuR.animate({
+    'width' : '50%'
+  }, 400, function () {
+    d2.resolve();
+    d2.done(function () {
+      console.log('d2 is done')
+    });
+
+  });
 
  setTimeout(function () {
     content.show();
@@ -131,14 +144,26 @@ $('#menu__close').on('click', function (e) {
 
   content.hide();
 
+
   menuL.removeClass('menu__left_turn');
   menuR.removeClass('menu__right_turn');
-  // d11.done(function () {
-  //   console.log('d11 is done')
-  // });
-  // d12.done(function () {
-  //   console.log('d12 is done')
-  // });
+
+  menuL.animate({
+    'width' : '0'
+  }, 400, function () {
+    d11.resolve();
+    d11.done(function () {
+      console.log('d11 is done')
+    });
+  });
+  menuR.animate({
+    'width' : '0'
+  }, 400, function () {
+    d12.resolve();
+    d12.done(function () {
+      console.log('d12 is done')
+    });
+  });
   setTimeout(function () {
     $('#menu__close').css('display', 'none');
     $('#menu__open').css('display', 'block');
@@ -147,6 +172,7 @@ $('#menu__close').on('click', function (e) {
   }, 400);
 
 });
+
 
 
 // MOUSE PARALLAX
@@ -165,3 +191,73 @@ $(window).on('mousemove', function(e){
   'transform' : 'translate3d(' + MoveX + 'px, ' + MoveY + 'px, 0)'});  // the main idea is here. it would also be conscious to set varieties out of the 'transform3d' property
 
   });
+
+
+
+//SLIDER
+
+(function slider() {
+  var counter = 1;
+  $('#sliderUp').on('click', function (e) {
+    e.preventDefault();
+    var items = $('.btn-up .slider__pict'),
+        ActItem = $('.btn-up .slider__pict.active'),
+        anotherItems = $('.btn-down .slider__pict'),
+        anotherActItem = $('.btn-down .slider__pict.active'),
+        descrItems = $('.slider__description_item'),
+        descrActItem = $('.slider__description_item.active');
+
+
+    if (counter >= items.length){
+      counter = 0;
+    }
+    var nextItem = items.eq(counter),
+        anotherNextItem = anotherItems.eq(-counter + 1),
+        nextDescrItem = descrItems.eq(counter - 1);
+
+    ActItem.animate({
+      'top' : '-55%'
+    }, 300);
+    anotherActItem.animate({
+      'top': '155%'
+    }, 300);
+
+    descrActItem.animate({
+      'display' : 'none'
+    }, 150);
+
+    nextDescrItem.animate({
+      'display': 'block'
+    }, 150, function () {
+      descrActItem.removeClass('active');
+      nextDescrItem.addClass('active');
+    });
+
+
+    function changeSlide(src){
+      $('.slider__main-picture').attr('src', src);
+    }
+
+    nextItem.animate({
+      'top' : '50%'
+    }, 300, function () {
+      var src = ActItem.find('img').attr('src');
+      changeSlide(src);
+      ActItem.removeClass('active').css('top', '155%');
+      nextItem.addClass('active');
+
+    });
+    anotherNextItem.animate({
+      'top': '50%'
+    }, 300, function () {
+      anotherActItem.removeClass('active').css('top', '-55%');
+      anotherNextItem.addClass('active');
+    });
+
+    counter++;
+
+  });
+  
+  
+}());
+

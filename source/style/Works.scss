@@ -209,6 +209,7 @@ html{
 .slider__controls{
   display: flex;
   width: 50%;
+  overflow: hidden;
   @include tablet{
     width:100%;
     order:3;
@@ -232,7 +233,7 @@ html{
   width: 100%;
   height: 100%;
   z-index: 2;
-  $grey: rgba(#e4e2de, 0.7);
+  $grey: rgba(#e4e2de, 0.2);
   background-color: darken($grey, 20%);
 }
 .move__control{
@@ -275,14 +276,18 @@ html{
 .portf__arrow{
   box-shadow: 0 2px 2px rgba(0, 0, 0, 0.16);
 }
-.slider__sites-pictures{
+.slider__pict{
   position: absolute;
-  max-width: 100%;
-  max-height: 100%;
   top:50%;
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 0;
+}
+.slider__sites-pictures{
+  display: block;
+  max-width: 100%;
+  max-height: 100%;
+
 }
 .gossips {
   overflow: hidden;
@@ -680,3 +685,4 @@ html{
     }
   }
 }
+@import "slider";

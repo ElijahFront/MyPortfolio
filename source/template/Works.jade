@@ -88,24 +88,48 @@ html
 
     .slider__wrapper
         .slider__work-description#works-anchor
-            .slider__work-description_info
-                h2.name Сайт школы онлайн образования
-                span.used-technologies HTML5, CSS3, JavaScript
-                a.visit-site(href='#') Посмотреть сайт
+            ul.slider__description_list
+                li.slider__description_item
+                    .slider__work-description_info
+                        h2.name Первый
+                        span.used-technologies HTML5, CSS3, JavaScript
+                        a.visit-site(href='#') Посмотреть сайт
+                li.slider__description_item.active
+                    .slider__work-description_info
+                        h2.name Второй
+                        span.used-technologies HTML5, CSS3, JavaScript
+                        a.visit-site(href='#') Посмотреть сайт
+                li.slider__description_item
+                    .slider__work-description_info
+                        h2.name Третий
+                        span.used-technologies HTML5, CSS3, JavaScript
+                        a.visit-site(href='#') Посмотреть сайт
+                li.slider__description_item
+                    .slider__work-description_info
+                        h2.name Четвертый
+                        span.used-technologies HTML5, CSS3, JavaScript
+                        a.visit-site(href='#') Посмотреть сайт
 
         .slider__site-picture
-            //ul
-                //    li
-                //    li
-                //    li
-                //    li
             .slider__picture-wrapper
-                img(src='./assets/img/work.png').slider__main-picture
+                img(src='./assets/img/slider-works/Number 2 Orange.png').slider__main-picture
         .slider__controls
             .slider__move-btn.btn-up
                 .slider__pictures-wrapper
-                img(src='./assets/img/work.png').slider__sites-pictures
-                a(href='#').move__control.move__control-up.
+                ul.slider__pictures_list
+                    li.slider__pict.active
+                        img(src="./assets/img/slider-works/First.jpg").slider__sites-pictures
+                    li.slider__pict
+                        .slider__pictures-wrapper
+                        img(src="./assets/img/slider-works/Number 2 Orange.png").slider__sites-pictures
+                    li.slider__pict
+                        .slider__pictures-wrapper
+                        img(src="./assets/img/slider-works/3.png").slider__sites-pictures
+                    li.slider__pict
+                        .slider__pictures-wrapper
+                        img(src="./assets/img/slider-works/four.png").slider__sites-pictures
+
+                a(href='#').move__control.move__control-up#sliderUp.
                     <?xml version="1.0" encoding="utf-8"?>
                     <!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
                     <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
@@ -119,8 +143,19 @@ html
                     </svg>
             .slider__move-btn.btn-down
                 .slider__pictures-wrapper
-                img(src='./assets/img/work.png').slider__sites-pictures
-                a(href='#').move__control.move__control-down.
+                ul.slider__pictures_list
+                    li.slider__pict
+                        img(src="./assets/img/slider-works/four.png").slider__sites-pictures
+                    li.slider__pict.active
+                        .slider__pictures-wrapper
+                        img(src="./assets/img/slider-works/3.png").slider__sites-pictures
+                    li.slider__pict
+                        .slider__pictures-wrapper
+                        img(src="./assets/img/slider-works/Number 2 Orange.png").slider__sites-pictures
+                    li.slider__pict
+                        .slider__pictures-wrapper
+                        img(src="./assets/img/slider-works/First.jpg").slider__sites-pictures
+                a(href='#').move__control.move__control-down#sliderDown.
                     <?xml version="1.0" encoding="utf-8"?>
                     <!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
                     <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">

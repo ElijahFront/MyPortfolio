@@ -1,0 +1,19 @@
+
+.btn-up .slider__pict{
+  top:155%;
+}
+.btn-down .slider__pict{
+  top:-55%;
+}
+.slider__pict.active{
+  top:50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.slider__description_item{
+  display: none;
+  //transition: all 300ms;
+}
+.slider__description_item.active{
+  display: block;
+}
