@@ -85,17 +85,41 @@ $(window).load(function () {
 
 $('#menu__open').on('click', function (e) {
 
-  
+
   e.preventDefault();
 
-  var menu = $('.menu'),
+  var menuL = $('.menu__left'),
+      menuR = $('.menu__right'),
+      menu = $('.menu'),
       content = $('.menu__content');
 
   menu.show();
+  // menuL.css('width', '50%');
+  // menuR.css('width', '50%');
+  menuL.addClass('menu__left_turn');
+  menuR.addClass('menu__right_turn');
 
-  menu.toggleClass('active');
+  menu.css('display', 'flex');
+  // menuL.animate({
+  //   'width' : '50%'
+  // }, 400, function () {
+  //   d1.resolve();
+  //   d1.done(function () {
+  //     console.log('d1 is done')
+  //   });
+  //
+  // });
+  // menuR.animate({
+  //   'width' : '50%'
+  // }, 400, function () {
+  //   d2.resolve();
+  //   d2.done(function () {
+  //     console.log('d2 is done')
+  //   });
+  //
+  // });
 
- setTimeout(function () {
+  setTimeout(function () {
     content.show();
     $('#menu__close').css('display', 'block');
     $('#menu__open').css('display','none');
@@ -106,17 +130,35 @@ $('#menu__open').on('click', function (e) {
 
 $('#menu__close').on('click', function (e) {
   e.preventDefault();
-  
-  var menu = $('.menu'),
+
+
+  var menuL = $('.menu__left'),
+      menuR = $('.menu__right'),
+      menu = $('.menu'),
       content = $('.menu__content');
 
   content.hide();
 
-  menu.removeClass('active');
-  menu.hide();
-  
-});
 
+  menuL.removeClass('menu__left_turn');
+  menuR.removeClass('menu__right_turn');
+
+  // menuL.animate({
+  //   'width' : '0'
+  // }, 400, function () {
+  //   d11.resolve();
+  //   d11.done(function () {
+  //     console.log('d11 is done')
+  //   });
+  // });
+  // menuR.animate({
+  //   'width' : '0'
+  // }, 400, function () {
+  //   d12.resolve();
+  //   d12.done(function () {
+  //     console.log('d12 is done')
+  //   });
+  // });
   setTimeout(function () {
     $('#menu__close').css('display', 'none');
     $('#menu__open').css('display', 'block');
@@ -124,8 +166,7 @@ $('#menu__close').on('click', function (e) {
 
   }, 400);
 
-
-
+});
 
 
 // MOUSE PARALLAX
