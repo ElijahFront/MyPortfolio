@@ -9,6 +9,7 @@ body {
 ul{
   margin: 0;
   padding: 0;
+  list-style: none;
 }
 @import "common/preloader";
 @import "common/menu";
@@ -32,12 +33,7 @@ ul{
   .block, .block-login{
     //margin-top: 143px;
   }
-  .mountains{
-    max-height: 148px;
-      img{
-        width:115%;
-      }
-  }
+
 }
 @media all and (min-width: 1800px){
   .block{

@@ -26,9 +26,11 @@
 }
 .menu__left_turn{
   width: 50% !important;
+  transition: all 400ms;
 }
 .menu__right_turn{
   width: 50% !important;
+  transition: all 400ms;
 }
 .menu:after{
   content: '';
