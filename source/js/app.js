@@ -201,25 +201,25 @@ $(window).on('mousemove', function(e){
         anotherActItem = $('.btn-down .slider__pict.active'),
         descrItems = $('.slider__description_item'),
         descrActItem = $('.slider__description_item.active');
-    console.log('array length: '+ items.length);
+    console.log('array length: ' + items.length);
 
 
-    if (counter >= items.length){
+    if (counter >= items.length) {
       counter = 0;
     }
-    var nextItem = items.eq(counter ),
-        anotherNextItem = anotherItems.eq(-counter + 1),
+    var nextItem = items.eq(counter),
+        anotherNextItem = anotherItems.eq(counter - 2),
         nextDescrItem = descrItems.eq(counter - 1);
 
     ActItem.animate({
-      'top' : '-55%'
+      'top': '-55%'
     }, 300);
     anotherActItem.animate({
       'top': '155%'
     }, 300);
 
     descrActItem.animate({
-      'display' : 'none'
+      'display': 'none'
     }, 150);
 
     nextDescrItem.animate({
@@ -230,12 +230,12 @@ $(window).on('mousemove', function(e){
     });
 
 
-    function changeSlide(src){
+    function changeSlide(src) {
       $('.slider__main-picture').attr('src', src);
     }
 
     nextItem.animate({
-      'top' : '50%'
+      'top': '50%'
     }, 300, function () {
       var src = ActItem.find('img').attr('src');
       changeSlide(src);
@@ -253,9 +253,11 @@ $(window).on('mousemove', function(e){
     counter++;
     console.log(counter)
   });
+}());
 
   // Right btn slider
-
+(function rbtn() {
+  var counter = ($('.btn-down .slider__pict').index($('.slider__pict.active'))) + 1;
   $('#sliderDown').on('click', function (e) {
     e.preventDefault();
     var items = $('.btn-down .slider__pict'),
@@ -269,9 +271,9 @@ $(window).on('mousemove', function(e){
     if (counter >= items.length){
       counter = 0;
     }
-    var nextItem = items.eq(counter),
-        anotherNextItem = anotherItems.eq(-counter + 1),
-        nextDescrItem = descrItems.eq(-counter);
+    var nextItem = items.eq(-counter),
+        anotherNextItem = anotherItems.eq(-counter +2),
+        nextDescrItem = descrItems.eq(-counter +1);
 
     anotherItems.css('top', '-55%');
     anotherActItem.css('top', '50%');
@@ -320,9 +322,10 @@ $(window).on('mousemove', function(e){
     counter++;
     console.log(counter);
 
-
   })
-  
+
 }());
+
+
 
 
