@@ -8,6 +8,7 @@
   display: flex;
   display: none;
   justify-content:center;
+  transition: all 400ms;
 }
 .menu__left{
   position: absolute;
@@ -18,12 +19,11 @@
   background-color: rgba(#183669, .87);
   transition: all 400ms;
   transform: translateX(-100%);
-  transition: all 400ms;
 }
-.menu__left_turn{
+.menu.active .menu__left{
   //width: 50% !important;
-  transform: translateX(0%);
   transition: all 400ms;
+  transform: translateX(0%);
 }
 
 .menu__right{
@@ -37,10 +37,10 @@
   transform: translateX(100%);
   transition: all 400ms;
 }
-.menu__right_turn{
+.menu.active .menu__right{
   //width: 50% !important;
-  transform: translateX(0%);
   transition: all 400ms;
+  transform: translateX(0%);
 }
 .menu__close-btn{
   position: absolute;
@@ -57,7 +57,7 @@
 .menu__content{
   display: none;
   text-align: center;
-  margin-top:259px;
+  margin-top:229px;
   @include tablet{
     margin-top: 190px;
   }

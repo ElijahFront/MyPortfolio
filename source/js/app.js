@@ -94,30 +94,11 @@ $('#menu__open').on('click', function (e) {
       content = $('.menu__content');
 
   menu.show();
-  // menuL.css('width', '50%');
-  // menuR.css('width', '50%');
-  menuL.addClass('menu__left_turn');
-  menuR.addClass('menu__right_turn');
+  menu.addClass('active');
+  // menuL.addClass('menu__left_turn');
+  // menuR.addClass('menu__right_turn');
 
   menu.css('display', 'flex');
-  // menuL.animate({
-  //   'width' : '50%'
-  // }, 400, function () {
-  //   d1.resolve();
-  //   d1.done(function () {
-  //     console.log('d1 is done')
-  //   });
-  //
-  // });
-  // menuR.animate({
-  //   'width' : '50%'
-  // }, 400, function () {
-  //   d2.resolve();
-  //   d2.done(function () {
-  //     console.log('d2 is done')
-  //   });
-  //
-  // });
 
   setTimeout(function () {
     content.show();
@@ -126,12 +107,11 @@ $('#menu__open').on('click', function (e) {
   }, 400);
 
 });
+
 ///Closing the menu
 
 $('#menu__close').on('click', function (e) {
   e.preventDefault();
-
-
   var menuL = $('.menu__left'),
       menuR = $('.menu__right'),
       menu = $('.menu'),
@@ -140,25 +120,10 @@ $('#menu__close').on('click', function (e) {
   content.hide();
 
 
-  menuL.removeClass('menu__left_turn');
-  menuR.removeClass('menu__right_turn');
+  // menuL.removeClass('menu__left_turn');
+  // menuR.removeClass('menu__right_turn');
+menu.removeClass('active');
 
-  // menuL.animate({
-  //   'width' : '0'
-  // }, 400, function () {
-  //   d11.resolve();
-  //   d11.done(function () {
-  //     console.log('d11 is done')
-  //   });
-  // });
-  // menuR.animate({
-  //   'width' : '0'
-  // }, 400, function () {
-  //   d12.resolve();
-  //   d12.done(function () {
-  //     console.log('d12 is done')
-  //   });
-  // });
   setTimeout(function () {
     $('#menu__close').css('display', 'none');
     $('#menu__open').css('display', 'block');
@@ -191,141 +156,124 @@ $(window).on('mousemove', function(e){
 //SLIDER
 
 (function slider() {
-  var counter = ($('.btn-up .slider__pict').index($('.slider__pict.active'))) + 1;
-  $('#sliderUp').on('click', function (e) {
-    console.log('индекс: ' + counter);
+  $('.move__control').on('click', function (e) {
     e.preventDefault();
-    var items = $('.btn-up .slider__pict'),
-        ActItem = $('.btn-up .slider__pict.active'),
-        anotherItems = $('.btn-down .slider__pict'),
-        anotherActItem = $('.btn-down .slider__pict.active'),
-        descrItems = $('.slider__description_item'),
+    var descrItems = $('.slider__description_item'),
         descrActItem = $('.slider__description_item.active');
-    console.log('array length: ' + items.length);
-
-
-    if (counter >= items.length) {
-      counter = 0;
-    }
-    var nextItem = items.eq(counter),
-        anotherNextItem = anotherItems.eq(counter - 2),
-        nextDescrItem = descrItems.eq(counter - 1);
-
-    ActItem.animate({
-      'top': '-55%'
-    }, 300);
-    anotherActItem.animate({
-      'top': '155%'
-    }, 300);
-
-    descrActItem.animate({
-      'display': 'none'
-    }, 150);
-
-    nextDescrItem.animate({
-      'display': 'block'
-    }, 150, function () {
-      descrActItem.removeClass('active');
-      nextDescrItem.addClass('active');
-    });
-
 
     function changeSlide(src) {
       $('.slider__main-picture').attr('src', src);
     }
 
-    nextItem.animate({
-      'top': '50%'
-    }, 300, function () {
-      var src = ActItem.find('img').attr('src');
-      changeSlide(src);
-      ActItem.removeClass('active').css('top', '155%');
-      nextItem.addClass('active');
+    //console.log(items.length);
 
-    });
-    anotherNextItem.animate({
-      'top': '50%'
-    }, 300, function () {
-      anotherActItem.removeClass('active').css('top', '-55%');
-      anotherNextItem.addClass('active');
-    });
+    if($(this).hasClass('move__control-up')){
+      var items = $('.btn-up .slider__pict');
+      console.log(items);
+      var counter = ($('.btn-up .slider__pictures_list .slider__pict').index($('.slider__pict.active'))) + 1;
 
-    counter++;
-    console.log(counter)
+      if (counter >= ((items.length))){
+        counter = 0;
+      }
+      console.log('btn-up');
+      var nextItem = items.eq(counter + 1);
+      var anotherItems = $('.btn-down .slider__pict');
+      var anotherNextItem = anotherItems.eq(counter - 2);
+      var anotherActItem = $('.btn-down .slider__pict.active');
+      var ActItem = $('.btn-up .slider__pict.active');
+      var nextDescrItem = descrItems.eq(counter - 1);
+      //nextItem.css('top', '155%');
+
+      ActItem.animate({
+        'top':'-55%'
+      }, 300);
+
+      // anotherItems.css('top', '-55%');
+      anotherActItem.animate({
+        'top':'155%'
+      }, 300);
+
+      descrActItem.animate({
+        'display': 'none'
+      }, 300);
+
+      nextDescrItem.animate({
+        'display': 'block'
+      }, 300, function () {
+        descrActItem.removeClass('active');
+        nextDescrItem.addClass('active');
+      });
+
+      nextItem.animate({
+        'top':'55%'
+      }, 300, function () {
+        var src = ActItem.find('img').attr('src');
+        changeSlide(src);
+        ActItem.css('top', '155%').removeClass('active');
+        nextItem.addClass('active');
+      });
+      anotherNextItem.animate({
+        'top': '55%'
+      }, 300, function () {
+        anotherActItem.removeClass('active').css('top', '-55%');
+        anotherNextItem.addClass('active');
+      });
+      console.log(counter);
+    }
+
+     else if ($(this).hasClass('move__control-down')){
+      var items = $('.btn-down .slider__pictures_list .slider__pict');
+      console.log(items.length);
+
+      if (counter >= ((items.length))){
+        counter = 0;
+      }
+
+      var counter = ($('.btn-down .slider__pict').index($('.slider__pict.active'))) + 1;
+      console.log('btn-down');
+      var nextItem = items.eq(counter);
+      var anotherItems = $('.btn-up .slider__pict');
+      var anotherNextItem = anotherItems.eq(counter - 2);
+      var anotherActItem = $('.btn-up .slider__pict.active');
+      var ActItem = $('.btn-down .slider__pict.active');
+      var nextDescrItem = descrItems.eq(counter - 1);
+      //nextItem.css('top', '155%');
+
+      ActItem.animate({
+        'top':'-55%'
+      }, 300);
+
+      // anotherItems.css('top', '-55%');
+      anotherActItem.animate({
+        'top':'155%'
+      }, 300);
+
+      descrActItem.animate({
+        'display': 'none'
+      }, 300);
+
+      nextDescrItem.animate({
+        'display': 'block'
+      }, 300, function () {
+        descrActItem.removeClass('active');
+        nextDescrItem.addClass('active');
+      });
+
+      nextItem.animate({
+        'top':'55%'
+      }, 300, function () {
+        var src = ActItem.find('img').attr('src');
+        changeSlide(src);
+        ActItem.css('top', '155%').removeClass('active');
+        nextItem.addClass('active');
+      });
+      anotherNextItem.animate({
+        'top': '55%'
+      }, 300, function () {
+        anotherActItem.removeClass('active').css('top', '-55%');
+        anotherNextItem.addClass('active');
+      });
+    }
+
   });
 }());
-
-  // Right btn slider
-(function rbtn() {
-  var counter = ($('.btn-down .slider__pict').index($('.slider__pict.active'))) + 1;
-  $('#sliderDown').on('click', function (e) {
-    e.preventDefault();
-    var items = $('.btn-down .slider__pict'),
-        ActItem = $('.btn-down .slider__pict.active'),
-        anotherItems = $('.btn-up .slider__pict'),
-        anotherActItem = $('.btn-up .slider__pict.active'),
-        descrItems = $('.slider__description_item'),
-        descrActItem = $('.slider__description_item.active');
-
-
-    if (counter >= items.length){
-      counter = 0;
-    }
-    var nextItem = items.eq(-counter),
-        anotherNextItem = anotherItems.eq(-counter +2),
-        nextDescrItem = descrItems.eq(-counter +1);
-
-    anotherItems.css('top', '-55%');
-    anotherActItem.css('top', '50%');
-    items.css('top', '155%');
-    ActItem.css('top', '50%');
-
-    ActItem.animate({
-      'top' : '-55%'
-    }, 300);
-    anotherActItem.animate({
-      'top': '155%'
-    }, 300);
-
-    descrActItem.animate({
-      'display' : 'none'
-    }, 150);
-
-    nextDescrItem.animate({
-      'display': 'block'
-    }, 150, function () {
-      descrActItem.removeClass('active');
-      nextDescrItem.addClass('active');
-    });
-
-
-    function changeSlide(src){
-      $('.slider__main-picture').attr('src', src);
-    }
-
-    nextItem.animate({
-      'top' : '50%'
-    }, 300, function () {
-      var src = ActItem.find('img').attr('src');
-      changeSlide(src);
-      ActItem.removeClass('active').css('top', '155%');
-      nextItem.addClass('active');
-
-    });
-    anotherNextItem.animate({
-      'top': '50%'
-    }, 300, function () {
-      anotherActItem.removeClass('active').css('top', '155%');
-      anotherNextItem.addClass('active');
-    });
-
-    counter++;
-    console.log(counter);
-
-  })
-
-}());
-
-
-
-
