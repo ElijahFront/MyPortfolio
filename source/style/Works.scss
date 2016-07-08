@@ -371,6 +371,7 @@ html{
     font-style: italic;
     line-height: 26px;
     display: block;
+    max-width: 390px;
     &:before {
       content: '';
       display: block;

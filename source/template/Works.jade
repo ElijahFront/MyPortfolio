@@ -1,5 +1,5 @@
 doctype html
-html
+html(lang='ru-RU')
     include common/_head
     body.works-body
         <!--[if lt IE 7]>
@@ -65,7 +65,7 @@ html
         .menu
         .logo-about
             .icon-logo
-                img(src="assets/img/ava-crop.jpeg")
+                img(src="assets/img/ava-crop.jpeg", alt="my picture")
             .text
                 h1 Илья Сметанин
                 span Личный сайт веб-разработчика
@@ -83,7 +83,6 @@ html
                 |</g>
                 |</svg>
         .bg-main
-
             h1 Мои работы
 
     .slider__wrapper
@@ -112,22 +111,22 @@ html
 
         .slider__site-picture
             .slider__picture-wrapper
-                img(src='./assets/img/slider-works/First.jpg').slider__main-picture
+                img(src='./assets/img/slider-works/First.jpg', alt="picture of the main work").slider__main-picture
         .slider__controls
             .slider__move-btn.btn-up
                 .slider__pictures-wrapper
                 ul.slider__pictures_list
                     li.slider__pict
-                        img(src="./assets/img/slider-works/First.jpg").slider__sites-pictures
+                        img(src="./assets/img/slider-works/First.jpg", alt="first work").slider__sites-pictures
                     li.slider__pict.active
                         .slider__pictures-wrapper
-                        img(src="./assets/img/slider-works/Number 2 Orange.png").slider__sites-pictures
+                        img(src="./assets/img/slider-works/Number 2 Orange.png", alt="2nd work").slider__sites-pictures
                     li.slider__pict
                         .slider__pictures-wrapper
-                        img(src="./assets/img/slider-works/3.png").slider__sites-pictures
+                        img(src="./assets/img/slider-works/3.png", alt="3rd work").slider__sites-pictures
                     li.slider__pict
                         .slider__pictures-wrapper
-                        img(src="./assets/img/slider-works/four.png").slider__sites-pictures
+                        img(src="./assets/img/slider-works/four.png", alt="4th work").slider__sites-pictures
 
                 a(href='#').move__control.move__control-up#sliderUp.
                     <?xml version="1.0" encoding="utf-8"?>
@@ -145,16 +144,16 @@ html
                 .slider__pictures-wrapper
                 ul.slider__pictures_list
                     li.slider__pict
-                        img(src="./assets/img/slider-works/four.png").slider__sites-pictures
+                        img(src="./assets/img/slider-works/four.png", alt="4th work").slider__sites-pictures
                     li.slider__pict.active
                         .slider__pictures-wrapper
-                        img(src="./assets/img/slider-works/3.png").slider__sites-pictures
+                        img(src="./assets/img/slider-works/3.png", alt="3rd work").slider__sites-pictures
                     li.slider__pict
                         .slider__pictures-wrapper
-                        img(src="./assets/img/slider-works/Number 2 Orange.png").slider__sites-pictures
+                        img(src="./assets/img/slider-works/Number 2 Orange.png", alt="2nd work").slider__sites-pictures
                     li.slider__pict
                         .slider__pictures-wrapper
-                        img(src="./assets/img/slider-works/First.jpg").slider__sites-pictures
+                        img(src="./assets/img/slider-works/First.jpg", alt="first work").slider__sites-pictures
                 a(href='#').move__control.move__control-down#sliderDown.
                     <?xml version="1.0" encoding="utf-8"?>
                     <!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
@@ -174,7 +173,7 @@ section.gossips
         .opinions-wrappwer
             .opinion.Dima
                 .logo
-                    img(src='./assets/img/Dima.png')
+                    img(src='./assets/img/Dima.png', alt="Dima Kovalchuk")
                 blockquote.opinion-text.
                     Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool!
                      2 месяца только самых тяжелых испытаний и бессонных ночей!
@@ -186,7 +185,7 @@ section.gossips
 
             .opinion.Zar
                 .logo
-                    img(src='./assets/img/Zar.png')
+                    img(src='./assets/img/Zar.png', alt="Zar Zakharov")
                 blockquote.opinion-text.
                     Этот код выдержет любые испытания. Только пожалуйста, не загружается сайт на слишком старых браузерах!
                 .author

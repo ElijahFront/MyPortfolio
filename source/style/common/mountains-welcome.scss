@@ -4,6 +4,7 @@ $img : "../img";
   top: 0; right: 0; bottom: 0; left: 0;
   overflow: hidden;
   z-index: -100;
+  min-height: 540px;
 }
 .video{
   position: absolute;
@@ -93,4 +94,15 @@ $img : "../img";
   font-size: 16px;
   font-weight: 100;
   opacity: 0.8;
+}
+
+@media all and (max-height: 540px) {
+  .copy{
+    bottom: 20px;
+  }
+}
+@media all and (max-height: 480px) {
+  .copy{
+    opacity: 0;
+  }
 }

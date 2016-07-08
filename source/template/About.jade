@@ -1,5 +1,5 @@
 doctype html
-html
+html(lang='ru-RU')
     include common/_head
     body.about-body
         include common/menu
@@ -121,6 +121,7 @@ html
                     map = new google.maps.Map(document.getElementById('map'), {
                     center: {lat: 56.813163, lng: 60.569944},
                     zoom: 14,
+                    scrollwheel: false,
                         styles: [
                             {
                                 "featureType": "administrative",

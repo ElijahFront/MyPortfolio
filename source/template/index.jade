@@ -1,5 +1,5 @@
 doctype html
-html.index-html
+html.index-html(lang='ru-RU')
   include common/_head
   body.index-body
     <!--[if lt IE 7]>
@@ -13,14 +13,14 @@ html.index-html
         source(src="assets/img/night.mp4")
         //li.layer(data-depth='0.9')
       div.mountains
-        img(src="assets/img/mountains.png")
+        img(src="assets/img/mountains.png", alt="mountains-pict")
 
       a.login#log
         span Авторизоваться
 
     div.block#bl
       div.icon-logo
-        img(src="assets/img/ava-crop.jpeg")
+        img(src="assets/img/ava-crop.jpeg", alt="My picture")
       div.text
         h1 Илья Сметанин
         span Личный сайт веб-разработчика

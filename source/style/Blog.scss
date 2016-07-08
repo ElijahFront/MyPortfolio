@@ -44,9 +44,11 @@ h1, h2, h3{
   position: -o-sticky;
   top: 20px;
   max-width: 280px;
+  width: 20%;
   float:left;
   margin-left: 4%;
   margin-right: 6%;
+  height:20px;
   min-height: 100%;
   @include points(1060){
     width: 20%;
@@ -55,12 +57,24 @@ h1, h2, h3{
     display: none;
   }
 }
+.blog__list_wrapper{
+  width: 100%;
+  max-width: 280px;
+  height:1px;
+  position: relative;
+}
 .blog__list{
+  width: auto;
   box-sizing: border-box;
   list-style: none;
+  max-width: 280px;
   margin: 0;
   padding: 0;
   text-align: right;
+}
+.blog__list_sticky{
+  position: fixed;
+  top: 20px;
 }
 .blog__list_item{
   margin-bottom: 24px;
