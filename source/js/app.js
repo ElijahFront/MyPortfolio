@@ -17,12 +17,12 @@ $(window).load(function () {
   setTimeout(function () {
     $('#prelText').text('100%');
     $('#preloader').hide();
-    $('#preloader').css('display', 'none')
+    // $('#preloader').css('display', 'none')
   }, 1000)
 });
 
 
-
+//FLIPPING CARD
   var change = function (disp, disp2,cl) {
   $('.block').css('display', disp);
   $('.block-login').css('display', disp2);
@@ -33,21 +33,20 @@ $(window).load(function () {
     $("#bl").addClass("flipped");
     setTimeout(function(){
       change('none','flex','tapped')}, 600);
-    
     });
 
 
 
-
-
-if ($('#log').hasClass('tapped')) {
-
   $(document).on('click', function (e) {
-    $('#bl').removeClass('flipped');
-    $('#log').removeClass('tapped');
-    setTimeout(change('flex', 'none', ''), 1000)
+    if ($('#log').hasClass('tapped')) {
+      $('#bl').removeClass('flipped');
+      $('#log').removeClass('tapped');
+      setTimeout(change('flex', 'none', ''), 1000)
+    }
   });
-}
+
+
+
   /* Заполнение шкалы скилов
  var circle = document.getElementById('circle'),
      btn = document.getElementById('start');
@@ -86,8 +85,6 @@ if ($('#log').hasClass('tapped')) {
 
 $('#menu__open').on('click', function (e) {
 
-  var d1 = $.Deferred();
-  var d2 = $.Deferred();
 
   e.preventDefault();
 
@@ -97,46 +94,24 @@ $('#menu__open').on('click', function (e) {
       content = $('.menu__content');
 
   menu.show();
-  // menuL.css('width', '50%');
-  // menuR.css('width', '50%');
-  menuL.addClass('menu__left_turn');
-  menuR.addClass('menu__right_turn');
+  menu.addClass('active');
+  // menuL.addClass('menu__left_turn');
+  // menuR.addClass('menu__right_turn');
 
   menu.css('display', 'flex');
-  menuL.animate({
-    'width' : '50%'
-  }, 400, function () {
-    d1.resolve();
-    d1.done(function () {
-      console.log('d1 is done')
-    });
 
-  });
-  menuR.animate({
-    'width' : '50%'
-  }, 400, function () {
-    d2.resolve();
-    d2.done(function () {
-      console.log('d2 is done')
-    });
-
-  });
-
- setTimeout(function () {
+  setTimeout(function () {
     content.show();
     $('#menu__close').css('display', 'block');
     $('#menu__open').css('display','none');
   }, 400);
 
 });
+
 ///Closing the menu
 
 $('#menu__close').on('click', function (e) {
   e.preventDefault();
-
-  var d11 = $.Deferred();
-  var d12 = $.Deferred();
-
   var menuL = $('.menu__left'),
       menuR = $('.menu__right'),
       menu = $('.menu'),
@@ -145,25 +120,10 @@ $('#menu__close').on('click', function (e) {
   content.hide();
 
 
-  menuL.removeClass('menu__left_turn');
-  menuR.removeClass('menu__right_turn');
+  // menuL.removeClass('menu__left_turn');
+  // menuR.removeClass('menu__right_turn');
+menu.removeClass('active');
 
-  menuL.animate({
-    'width' : '0'
-  }, 400, function () {
-    d11.resolve();
-    d11.done(function () {
-      console.log('d11 is done')
-    });
-  });
-  menuR.animate({
-    'width' : '0'
-  }, 400, function () {
-    d12.resolve();
-    d12.done(function () {
-      console.log('d12 is done')
-    });
-  });
   setTimeout(function () {
     $('#menu__close').css('display', 'none');
     $('#menu__open').css('display', 'block');
@@ -172,7 +132,6 @@ $('#menu__close').on('click', function (e) {
   }, 400);
 
 });
-
 
 
 // MOUSE PARALLAX
@@ -196,145 +155,113 @@ $(window).on('mousemove', function(e){
 
 //SLIDER
 
-(function slider() {
-  var counter = ($('.btn-up .slider__pict').index($('.slider__pict.active'))) + 1;
-  $('#sliderUp').on('click', function (e) {
-    console.log('индекс: ' + counter);
-    e.preventDefault();
-    var items = $('.btn-up .slider__pict'),
-        ActItem = $('.btn-up .slider__pict.active'),
-        anotherItems = $('.btn-down .slider__pict'),
-        anotherActItem = $('.btn-down .slider__pict.active'),
-        descrItems = $('.slider__description_item'),
-        descrActItem = $('.slider__description_item.active');
-    console.log('array length: '+ items.length);
-
-
-    if (counter >= items.length){
-      counter = 0;
-    }
-    var nextItem = items.eq(counter ),
-        anotherNextItem = anotherItems.eq(-counter + 1),
-        nextDescrItem = descrItems.eq(counter - 1);
-
-    ActItem.animate({
-      'top' : '-55%'
-    }, 300);
-    anotherActItem.animate({
-      'top': '155%'
-    }, 300);
-
-    descrActItem.animate({
-      'display' : 'none'
-    }, 150);
-
-    nextDescrItem.animate({
-      'display': 'block'
-    }, 150, function () {
-      descrActItem.removeClass('active');
-      nextDescrItem.addClass('active');
-    });
-
-
-    function changeSlide(src){
-      $('.slider__main-picture').attr('src', src);
-    }
-
-    nextItem.animate({
-      'top' : '50%'
-    }, 300, function () {
-      var src = ActItem.find('img').attr('src');
-      changeSlide(src);
-      ActItem.removeClass('active').css('top', '155%');
-      nextItem.addClass('active');
-
-    });
-    anotherNextItem.animate({
-      'top': '50%'
-    }, 300, function () {
-      anotherActItem.removeClass('active').css('top', '-55%');
-      anotherNextItem.addClass('active');
-    });
-
-    counter++;
-    console.log(counter)
-  });
-
-
-
-}());
 
 (function () {
-  // Right btn slider
-  var counter = ($('.btn-down .slider__pict').index($('.slider__pict.active'))) + 1;
+    var nextBtn = $('#sliderUp'),
+        prevBtn = $('#sliderDown'),
+        sliderItemsRight = $('.slider__pictures_list-right .slider__pict'),
+        sliderItemsLeft = $('.slider__pictures_list-left .slider__pict'),
+        mainPic = $('.slider__main-picture'),
+        currentSlideIndex = 0,
+        animationDuration = 300,
+        descrList = $('.slider__description_list .slider__description_item');
 
-  $('#sliderDown').on('click', function (e) {
-    e.preventDefault();
-    var items = $('.btn-down .slider__pict'),
-        ActItem = $('.btn-down .slider__pict.active'),
-        anotherItems = $('.btn-up .slider__pict'),
-        anotherActItem = $('.btn-up .slider__pict.active'),
-        descrItems = $('.slider__description_item'),
-        descrActItem = $('.slider__description_item.active');
-
-
-    if (counter >= items.length){
-      counter = 0;
-    }
-    var nextItem = items.eq(counter),
-        anotherNextItem = anotherItems.eq(-counter + 1),
-        nextDescrItem = descrItems.eq(-counter);
-
-    anotherItems.css('top', '-55%');
-    anotherActItem.css('top', '50%');
-    items.css('top', '155%');
-    ActItem.css('top', '50%');
-
-    ActItem.animate({
-      'top' : '-55%'
-    }, 300);
-    anotherActItem.animate({
-      'top': '155%'
-    }, 300);
-
-    descrActItem.animate({
-      'display' : 'none'
-    }, 150);
-
-    nextDescrItem.animate({
-      'display': 'block'
-    }, 150, function () {
-      descrActItem.removeClass('active');
-      nextDescrItem.addClass('active');
+    $(document).ready(function () {
+        nextBtn.on('click', changeSlide);
+        prevBtn.on('click', changeSlide);
     });
 
+    function changeSlide(e) {
+        e.preventDefault();
+        
+        var $this = $(this);
+        
+        if ($this.hasClass('move__control-down')){
+            if (currentSlideIndex - 1 < 0){
+                currentSlideIndex = sliderItemsRight.length - 1;
+            } else {
+                currentSlideIndex--;
+            }
+        } else {
+            if (currentSlideIndex + 1 > sliderItemsRight.length - 1){
+                currentSlideIndex = 0;
+            } else {
+                currentSlideIndex++;
+            }
+        }
 
-    function changeSlide(src){
-      $('.slider__main-picture').attr('src', src);
+
+        changeMainPic(sliderItemsRight);
+        slideLeftPreview(sliderItemsLeft);
+        slideRightPreview(sliderItemsRight);
+        changeDescription();
+
+        setTimeout(function () {
+            nextBtn.attr('disabled', 'false');
+            prevBtn.attr('disabled', 'false');
+        }, animationDuration);
+
     }
 
-    nextItem.animate({
-      'top' : '50%'
-    }, 300, function () {
-      var src = ActItem.find('img').attr('src');
-      changeSlide(src);
-      ActItem.removeClass('active').css('top', '155%');
-      nextItem.addClass('active');
+    function changeDescription() {
+        descrList.removeClass('active');
+        descrList.eq(currentSlideIndex).addClass('active');
 
-    });
-    anotherNextItem.animate({
-      'top': '50%'
-    }, 300, function () {
-      anotherActItem.removeClass('active').css('top', '155%');
-      anotherNextItem.addClass('active');
-    });
+    }
+    
+    function changeMainPic(slideItems) {
+        var nextIndexSrc = slideItems.eq(currentSlideIndex).find('img').attr('src');
+        mainPic.fadeOut(function () {
+            mainPic.attr('src', nextIndexSrc);
+            $(this).fadeIn();
+        });
 
-    counter++;
-    console.log(counter);
+    }
+
+    function slideLeftPreview(slideItems) {
+        var nextImgIndex;
+
+        if (currentSlideIndex + 1 >= slideItems.length){
+            nextImgIndex = 0;
+        } else {
+            nextImgIndex = currentSlideIndex + 1;
+        }
+
+        nextBtn.attr('disabled', 'true');
+        prevBtn.attr('disabled', 'true');
+
+        slideItems.filter('.active').addClass('slider__pict_to-up').removeClass('active');
+        slideItems.eq(nextImgIndex).addClass('active');
+
+        setTimeout(function () {
+            slideItems.removeClass('slider__pict_to-up')
+        }, animationDuration);
+    }
+
+    function slideRightPreview(slideItems) {
+        var nextImgIndex;
+        if (currentSlideIndex == 0){
+            nextImgIndex = slideItems.length - 1;
+        } else {
+            nextImgIndex = currentSlideIndex - 1;
+        }
+
+        nextBtn.attr('disabled', 'true');
+        prevBtn.attr('disabled', 'true');
+
+        slideItems.filter('.active').addClass('slider__pict_to-down').removeClass('active');
+        slideItems.eq(nextImgIndex).addClass('active');
+
+        setTimeout(function () {
+            slideItems.removeClass('slider__pict_to-down')
+        }, animationDuration);
+
+    }
 
 
-  })
-}());
+
+})();
+
 
 //STICKY BLOG MENU
 

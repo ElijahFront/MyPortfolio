@@ -4,38 +4,43 @@
   left: 0;
   bottom: 0;
   right: 0;
-
   z-index: 99999999;
   display: flex;
   display: none;
   justify-content:center;
-  //align-items: center;
+  transition: all 400ms;
 }
 .menu__left{
   position: absolute;
   top: 0;
   bottom: 0;
   left: 0;
-  width: 0%;
+  width: 50%;
   background-color: rgba(#183669, .87);
   transition: all 400ms;
+  transform: translateX(-100%);
 }
-.menu__left_turn{
-  width: 50% !important;
+.menu.active .menu__left{
+  //width: 50% !important;
   transition: all 400ms;
+  transform: translateX(0%);
 }
-.menu__right_turn{
-  width: 50% !important;
-  transition: all 400ms;
-}
+
 .menu__right{
   position: absolute;
   top: 0;
   bottom: 0;
   right: 0;
-  width: 0%;
+  width: 50%;
   background-color: rgba(#183669, .87);
   transition: all 400ms;
+  transform: translateX(100%);
+  transition: all 400ms;
+}
+.menu.active .menu__right{
+  //width: 50% !important;
+  transition: all 400ms;
+  transform: translateX(0%);
 }
 .menu__close-btn{
   position: absolute;
@@ -52,7 +57,7 @@
 .menu__content{
   display: none;
   text-align: center;
-  margin-top:259px;
+  margin-top:229px;
   @include tablet{
     margin-top: 190px;
   }

@@ -1,6 +1,13 @@
+$transitionDuration : 300ms;
 
 .btn-up .slider__pict{
   top:155%;
+
+}
+
+.slider__pict_to-down{
+  transform: translateY(155%);
+  transition: transform $transitionDuration linear;
 }
 .btn-down .slider__pict{
   top:-55%;
@@ -9,6 +16,11 @@
   top:50%;
   left: 50%;
   transform: translate(-50%, -50%);
+
+}
+.slider__pict_to-up{
+  transform: translate3d(0, -155%, 0);
+  transition: transform $transitionDuration linear;
 }
 .slider__description_item{
   display: none;

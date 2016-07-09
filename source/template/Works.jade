@@ -5,6 +5,7 @@ html(lang='ru-RU')
         <!--[if lt IE 7]>
         <p class="browsehappy">Вы используете <strong>устаревший</strong> браузер. Пожалуйста <a href="http://browsehappy.com/">обновите его</a></p>
         <![endif]-->
+        include common/menu
 
     section.main-night#main-top.works-night
         .social
@@ -63,6 +64,7 @@ html(lang='ru-RU')
                           </g>
                           </svg>
         .menu
+        a(href="#").menu__open_btn#menu__open
         .logo-about
             .icon-logo
                 img(src="assets/img/ava-crop.jpeg", alt="my picture")
@@ -115,16 +117,16 @@ html(lang='ru-RU')
         .slider__controls
             .slider__move-btn.btn-up
                 .slider__pictures-wrapper
-                ul.slider__pictures_list
+                ul.slider__pictures_list.slider__pictures_list-left
                     li.slider__pict
                         img(src="./assets/img/slider-works/First.jpg", alt="first work").slider__sites-pictures
-                    li.slider__pict.active
+                    li.slider__pict
                         .slider__pictures-wrapper
                         img(src="./assets/img/slider-works/Number 2 Orange.png", alt="2nd work").slider__sites-pictures
                     li.slider__pict
                         .slider__pictures-wrapper
                         img(src="./assets/img/slider-works/3.png", alt="3rd work").slider__sites-pictures
-                    li.slider__pict
+                    li.slider__pict.active
                         .slider__pictures-wrapper
                         img(src="./assets/img/slider-works/four.png", alt="4th work").slider__sites-pictures
 
@@ -142,18 +144,18 @@ html(lang='ru-RU')
                     </svg>
             .slider__move-btn.btn-down
                 .slider__pictures-wrapper
-                ul.slider__pictures_list
+                ul.slider__pictures_list.slider__pictures_list-right
                     li.slider__pict
-                        img(src="./assets/img/slider-works/four.png", alt="4th work").slider__sites-pictures
+                        img(src="./assets/img/slider-works/First.jpg", alt="1st work").slider__sites-pictures
                     li.slider__pict.active
-                        .slider__pictures-wrapper
-                        img(src="./assets/img/slider-works/3.png", alt="3rd work").slider__sites-pictures
-                    li.slider__pict
                         .slider__pictures-wrapper
                         img(src="./assets/img/slider-works/Number 2 Orange.png", alt="2nd work").slider__sites-pictures
                     li.slider__pict
                         .slider__pictures-wrapper
-                        img(src="./assets/img/slider-works/First.jpg", alt="first work").slider__sites-pictures
+                        img(src="./assets/img/slider-works/3.png", alt="3rd work").slider__sites-pictures
+                    li.slider__pict
+                        .slider__pictures-wrapper
+                        img(src="./assets/img/slider-works/four.png", alt="4th work").slider__sites-pictures
                 a(href='#').move__control.move__control-down#sliderDown.
                     <?xml version="1.0" encoding="utf-8"?>
                     <!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
