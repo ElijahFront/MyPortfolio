@@ -1,5 +1,6 @@
 doctype html
 html(lang='ru-RU')
+    -var pageTitle = 'My works'
     include common/_head
     body.works-body
         <!--[if lt IE 7]>
@@ -9,7 +10,8 @@ html(lang='ru-RU')
 
     section.main-night#main-top.works-night
         .social
-            a(href='http://vk.com/elijah_first', class='').
+            a(href='http://vk.com/elijah_first', class='', target="_blank").
+                <span>VK</span>
                 <?xml version="1.0" encoding="utf-8"?>
                           <!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
                           <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
@@ -28,7 +30,8 @@ html(lang='ru-RU')
                                   l4.5-0.031c1.359-0.172,1.578,0.453,1.578,0.453C30.203,1.879,29.468,3.379,27.625,5.832z"/>
                           </g>
                           </svg>
-            a(href='https://github.com/ElijahFront').
+            a(href='https://github.com/ElijahFront', target="_blank").
+                <span>GitHub</span>
                 <?xml version="1.0" encoding="utf-8"?>
                           <!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
                           <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
@@ -46,7 +49,8 @@ html(lang='ru-RU')
                                   S19.406,18,18,18z"/>
                           </g>
                           </svg>
-            a(href='https://www.linkedin.com/in/elijah-s-2b094a122?trk=hp-identity-name').
+            a(href='https://www.linkedin.com/in/elijah-s-2b094a122?trk=hp-identity-name', target="_blank").
+                <span>LinkedIn</span>
                 <?xml version="1.0" encoding="utf-8"?>
                           <!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
                           <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
@@ -63,7 +67,7 @@ html(lang='ru-RU')
                           />
                           </g>
                           </svg>
-        .menu
+
         a(href="#").menu__open_btn#menu__open
         .logo-about
             .icon-logo
@@ -195,10 +199,11 @@ section.gossips
                         span Зар Захаров
                         |— главный преподаватель
         .feedback
+            .feedback__filter
             h3 Связаться со мной
             form.feedback__form
-                input.feedback-input.inputs.name(type='text', placeholder='Ваше имя')
-                input.feedback-input.inputs.mail(type='text', placeholder='Ваш email')
+                input.feedback-input.inputs.name(type='text', placeholder='Ваше имя', required)
+                input.feedback-input.inputs.mail(type='text', placeholder='Ваш email', required)
                 textarea(placeholder='Ваше сообщение').feedback-input
                 .nav-buttons
                     input.submit-btn(type='submit')

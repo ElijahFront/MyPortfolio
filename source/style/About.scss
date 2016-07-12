@@ -15,7 +15,12 @@
     top:31px;
     left: 30px;
     a{
-      text-indent: -9999px;
+      span{
+        position: absolute;
+        left: -8888px;
+        color: transparent;
+      }
+
     }
   }
   .linked-in{

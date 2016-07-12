@@ -19,12 +19,17 @@
   position: absolute;
   top:50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: rotateY(0deg);
+  transition: transform 600ms;
+  margin-left: -192px;
+  margin-top: -190px;
   @include tablet{
     width:348px;
+    margin-left: -174px;
   }
   @include phone{
     width:300px;
+    margin-left: -150px;
   }
 }
 .icon-logo{
@@ -112,6 +117,11 @@
         fill: rgb(0, 76, 209);
       }
     }
+    span{
+      position: absolute;
+      left: -9999px;
+      color: transparent;
+    }
   }
 }
 .nav{
@@ -157,8 +167,10 @@
   transition-duration: 189ms;
 }
 .flipped{
-  animation-name: rotate;
-  animation-duration: 1s;
+  //animation-name: rotate;
+  //animation-duration: 1s;
+  transform: rotateY(180deg);
+  transition: transform 600ms;
 }
 @keyframes rotate {
   from{

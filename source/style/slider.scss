@@ -1,16 +1,30 @@
 $transitionDuration : 300ms;
 
+
+.slider__pict{
+  position: absolute;
+  top:50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 0;
+  transition: sll 200ms;
+}
+
 .btn-up .slider__pict{
-  top:155%;
-
+  transform: translate(-50%,150%);
+  &.slider__pict_to-up{
+    transform: translate3d(0, -155%, 0);
+    transition: transform $transitionDuration linear;
+  }
 }
 
-.slider__pict_to-down{
-  transform: translateY(155%);
-  transition: transform $transitionDuration linear;
-}
+
 .btn-down .slider__pict{
-  top:-55%;
+  transform: translate(-50%, -155%);
+  &.slider__pict_to-down{
+    transform: translateY(155%);
+    transition: transform $transitionDuration linear;
+  }
 }
 .slider__pict.active{
   top:50%;
@@ -18,10 +32,7 @@ $transitionDuration : 300ms;
   transform: translate(-50%, -50%);
 
 }
-.slider__pict_to-up{
-  transform: translate3d(0, -155%, 0);
-  transition: transform $transitionDuration linear;
-}
+
 .slider__description_item{
   display: none;
   //transition: all 300ms;

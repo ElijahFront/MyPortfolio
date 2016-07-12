@@ -276,13 +276,7 @@ html{
 .portf__arrow{
   box-shadow: 0 2px 2px rgba(0, 0, 0, 0.16);
 }
-.slider__pict{
-  position: absolute;
-  top:50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 0;
-}
+
 .slider__sites-pictures{
   display: block;
   max-width: 100%;
@@ -644,6 +638,22 @@ html{
       }
     }
   }
+.feedback__filter{
+  position: absolute;
+  top: 0;
+  left: 0;
+  //z-index: -100;
+  width: 348px;
+  height: 459px;
+  filter: blur(3px);
+  background-image: url("../img/night-tree.jpg");
+  background-repeat: no-repeat;
+  //background-size: contain;
+  background-position: center center;
+  @include phone {
+    width: 90%;
+  }
+}
 .feedback-input{
   color: rgba(white, .88);
   &:-moz-placeholder{
