@@ -1,2 +1,28 @@
+doctype html
+html(lang='ru-RU')
+    -var pageTitle = 'Admin panel'
+    include common/_head
+    body.admin__body
+        <!--[if lt IE 7]>
+        <p class="browsehappy">Вы используете <strong>устаревший</strong> браузер. Пожалуйста <a href="http://browsehappy.com/">обновите его</a></p>
+        <![endif]-->
+
+        header.admin__header
+            h1 Панель администрирования
+            a(href="#").admin__header_return Вернуться на сайт
+
+        .admin__tabs
+            ul.tabs__list
+                li.tabs__item.active
+                    a(href="#").tabs__item_link TAB 1
+                li.tabs__item
+                    a(href="#").tabs__item_link TAB 2
+                li.tabs__item
+                    a(href="#").tabs__item_link TAB 3
+
+        .admin__wrapper
+            include admin_about
+            include admin_blog
+            include admin_works
 
 

@@ -1,0 +1,102 @@
+.admin__body{
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+html{
+  height: 100%;
+}
+.admin__header{
+  width: 100%;
+  height: 80px;
+  background-color: #00bfa5;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+h1{
+  margin-left: 30px;
+  color: white;
+  font-family: Roboto, sans-serif;
+  font-size: 28px;
+  font-weight: 500;
+  line-height: 34px;
+}
+.admin__header_return{
+  opacity: 0.7;
+  color: white;
+  font-family: Roboto, sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  text-decoration: underline;
+  margin-right: 30px;
+}
+.admin__tabs{
+  width: 100%;
+  height: 60px;
+  background-color: #f0efe9;
+}
+.tabs__list{
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  width:100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+.tabs__item{
+  display: block;
+  border-right: 2px solid white;
+  width: 180px;
+  text-align: center;
+  vertical-align: middle;
+  @include tablet{
+    width: 190px;
+  }
+  &.active{
+    background-color: white;
+    .tabs__item_link{
+      color: #00bfa5;
+    }
+  }
+}
+.tabs__item_link{
+  display: block;
+  width: 100%;
+  height: 100%;
+  vertical-align: middle;
+  text-decoration: none;
+  color: rgba(#455a64, .8);
+  font-family: Roboto, sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 60px;
+}
+.admin__wrapper{
+  width: 100%;
+  height: 100%;
+  background: url('../img/mountains-admin.jpg') center no-repeat;
+  background-size: cover;
+}
+.admin__main{
+  width: 100%;
+  height: 100%;
+  background-color: rgba(white, 0.85);
+  padding-top: 50px;
+}
+.admin__page{
+  margin-left: 30px;
+  color: #455a64;
+  font-family: Roboto;
+  font-size: 21px;
+  font-weight: 500;
+  line-height: 34px;
+  margin-bottom: 44px;
+}
+@import "admin_about";
+@import "admin_blog";
+@import "admin_works";

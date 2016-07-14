@@ -1,0 +1,11 @@
+.admin__main.admin__main_2
+    h2.admin__page.admin__page_about Страница "Блог"
+
+    .admin__blog_form-wrapper
+        h3.admin__skill_header Добавить запись
+        form(name="admin_blog").admin__blog_form
+            input(type="text", placeholder="Название").admin__blog_form-title.admin__blog_form-inp
+            input(type="text", placeholder="Дата").admin__blog_form-date.admin__blog_form-inp
+            textarea(placeholder="Содержание").admin__blog_form-text
+
+            input(type="submit", value="Добавить").admin__save
