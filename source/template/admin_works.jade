@@ -3,9 +3,9 @@
 
     .admin__blog_form-wrapper
         h3.admin__skill_header Добавить работу
-        form(name="admin_blog").admin__blog_form
+        form(name="admin_blog", enctype="multipart/form-data").admin__blog_form
             input(type="text", placeholder="Название проекта").admin__blog_form-title.admin__blog_form-inp
             input(type="text", placeholder="Технологии").admin__blog_form-date.admin__blog_form-inp
-            input(type="file").admin__blog_form-picture
+            input(type="file", name="uploadWorkImg").admin__blog_form-picture
 
             input(type="submit", value="Добавить").admin__save

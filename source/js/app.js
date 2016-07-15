@@ -383,7 +383,7 @@ $(window).on('mousemove', function(e){
             password: $('.input-password').val()
         };
 
-        xhr.open('POST', '/save');
+        xhr.open('POST', '/login');
         xhr.setRequestHeader('Content-type', 'application/json; charset:utf-8');
         xhr.send(JSON.stringify(data))
     }
@@ -405,7 +405,7 @@ $(window).on('mousemove', function(e){
 }());
 
 /*
-* Admin
+* Admin tabs behaviour
  */
 
 (function adminTabs() {
@@ -427,6 +427,54 @@ $(window).on('mousemove', function(e){
         var indexOfActLi = $('.tabs__item.active').index();
         windows.hide();
         windows.eq(indexOfActLi).show();
+    })
+
+}());
+
+/*
+* Admin functionality
+ */
+
+(function AdminUpdate() {
+
+
+
+    $('#admin__save_skills').on('click', function (e) {
+        e.preventDefault();
+
+        function sendXHR(){
+            var xhr = new XMLHttpRequest();
+
+            xhr.open('POST', '/skillsPost');
+            //xhr.setRequestHeader('Content-type', 'application/json; charset:utf-8');
+            xhr.send(JSON.stringify(SkillsData))
+        }
+
+        var html = $('#admin__html').val(),
+            css = $('#admin__css').val(),
+            js = $('#admin__js').val(),
+            php = $('#admin__php').val(),
+            node = $('#admin__node').val(),
+            mongo = $('#admin__mongo').val(),
+            git = $('#admin__git').val(),
+            gulp = $('#admin__gulp').val(),
+            bower = $('#admin__bower').val();
+
+        var SkillsData = {
+            html: html,
+            css: css,
+            js: js,
+            php: php,
+            node: node,
+            mongo: mongo,
+            git: git,
+            gulp: gulp,
+            bower: bower
+        };
+
+
+        sendXHR();
+
     })
 
 }());
