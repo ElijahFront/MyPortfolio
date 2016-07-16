@@ -437,18 +437,19 @@ $(window).on('mousemove', function(e){
 
 (function AdminUpdate() {
 
+    function sendXHR(url, data){
 
+        $.ajax({
+            type: 'POST',
+            url: url,
+            data: data
+        })
+    }
 
     $('#admin__save_skills').on('click', function (e) {
         e.preventDefault();
 
-        function sendXHR(){
-            var xhr = new XMLHttpRequest();
-
-            xhr.open('POST', '/skillsPost');
-            //xhr.setRequestHeader('Content-type', 'application/json; charset:utf-8');
-            xhr.send(JSON.stringify(SkillsData))
-        }
+        
 
         var html = $('#admin__html').val(),
             css = $('#admin__css').val(),
@@ -473,8 +474,26 @@ $(window).on('mousemove', function(e){
         };
 
 
-        sendXHR();
+        sendXHR('/skillsPost', SkillsData);
 
+    });
+    
+    $('#admin__save_blog').on('click', function (e) {
+        
+        e.preventDefault();
+        
+        var title = $('.admin__blog_form-title').val(),
+            date = $('.admin__blog_form-date').val(),
+            text = $('.admin__blog_form-text').val();
+        
+        var blogData = {
+            title: title,
+            date: date,
+            text: text
+        };
+        
+        sendXHR('/saveBlogArticles', blogData)
+        
     })
 
 }());

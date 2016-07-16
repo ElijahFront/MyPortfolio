@@ -18,38 +18,61 @@ var SkillData = mongoose.model('SkillData', {
 
 });
 
+var PostData = mongoose.model('PostData', {
+    title: String,
+    date: String,
+    text: String
+});
+
 
 
 app.use(bodyParser.urlencoded({
     extended: true
 }));
 
-app.use(bodyParser.json({type: 'application/json'}));
+app.use(bodyParser.json());
 
 app.use(express.static('build'));
 
+app.set('views', './build');
 app.set('view engine', 'jade');
 
 
 app.get('/*', function (req, res) {
-    res.setHeader('Content-Type', 'text/html; encoding: utf-8;');
+
     console.log('Got new request at', req.url);
-    var fileName = './build/'+ req.url;
-    var content = fs.readFileSync(fileName, {encoding: 'utf-8'});
-    console.log('Server running');
-    res.write(content);
+
+    var adr = req.url.slice(1);
+
+    res.render(adr);
+
+    //res.setHeader('Content-Type', 'text/html; encoding: utf-8;');
+
     res.end();
 });
 
 
-app.post('/skillsPost', bodyParser.json(), function (req, res) {
+app.post('/skillsPost', function (req, res) {
    console.log('Got POST req on', req.url);
     console.log(req.body);
 
-    // var skills = new SkillData(req.body);
-    //
-    // skills.save();
-    //
+    var skills = new SkillData(req.body);
+    
+    skills.save();
+    
+    res.end()
+
+});
+
+app.post('/saveBlogArticles', function (req, res) {
+
+    console.log('Got POST req on', req.url);
+    console.log(req.body);
+
+    var post = new PostData(req.body);
+
+    post.save();
+
     res.end()
 
 });
