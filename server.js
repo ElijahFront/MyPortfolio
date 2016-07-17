@@ -38,19 +38,6 @@ app.set('views', './build');
 app.set('view engine', 'jade');
 
 
-app.get('/*', function (req, res) {
-
-    console.log('Got new request at', req.url);
-
-    var adr = req.url.slice(1);
-
-    res.render(adr);
-
-    //res.setHeader('Content-Type', 'text/html; encoding: utf-8;');
-
-    res.end();
-});
-
 
 app.post('/skillsPost', function (req, res) {
    console.log('Got POST req on', req.url);
@@ -75,6 +62,32 @@ app.post('/saveBlogArticles', function (req, res) {
 
     res.end()
 
+});
+
+app.get('/*', function (req, res) {
+
+    console.log('Got new request at', req.url);
+
+    var adr = req.url.slice(1);
+    
+    if (adr == 'Blog'){
+        PostData.find(function (err, posts) {
+            res.render(adr, {posts: posts})
+    
+        });
+    
+        console.log(adr)
+    } else {
+        res.render(adr);
+    }
+
+    PostData.find().then(function (item) {
+       item.forEach(function (i) {
+           console.log(i.title, i.date, i.text)
+       }) 
+    });
+    
+    res.end();
 });
 
 app.listen(3033);
