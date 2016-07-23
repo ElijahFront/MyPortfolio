@@ -298,10 +298,12 @@ input
 .alert{
   display: none;
   position: absolute;
-  top: 50%;
+  top: 10%;
   left: 50%;
   width: 20%;
   height: 60px;
   z-index: 99999;
   border:2px solid red;
+  text-align: center;
+  line-height: 60px;
 }

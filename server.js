@@ -2,29 +2,17 @@ var express = require('express');
 var app = express();
 var fs = require('fs');
 var bodyParser = require('body-parser');
+var config = require('./config');
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/skillsDB');
+mongoose.connect('mongodb://localhost/portfolio');
+var cookieParser = require('cookie-parser');
+var session = require('express-session');
+var MongoStore = require('connect-mongo')(session);
+var nconf = require('nconf');
 
-var SkillData = mongoose.model('SkillData', {
-    html: String,
-    css: String,
-    js: String,
-    php: String,
-    node: String,
-    mongo: String,
-    git: String,
-    gulp: String,
-    bower: String
-
-});
-
-var PostData = mongoose.model('PostData', {
-    title: String,
-    date: String,
-    text: String
-});
-
-
+nconf.argv()
+    .env()
+    .file({ file: './config/config.json'});
 
 app.use(bodyParser.urlencoded({
     extended: true
@@ -32,63 +20,22 @@ app.use(bodyParser.urlencoded({
 
 app.use(bodyParser.json());
 
+app.use(cookieParser());
+
+app.use(session({
+    secret: nconf.get('session:secret'),
+    cookie: nconf.get('session:cookie'),
+    resave: true, // добавил так как без этого была обибка
+    saveUninitialized: true, // это тоже
+    store: new MongoStore({ mongooseConnection: mongoose.connection })
+}));
+
 app.use(express.static('build'));
 
 app.set('views', './build');
 app.set('view engine', 'jade');
 
-
-
-app.post('/skillsPost', function (req, res) {
-   console.log('Got POST req on', req.url);
-    console.log(req.body);
-
-    var skills = new SkillData(req.body);
-    
-    skills.save();
-    
-    res.end()
-
-});
-
-app.post('/saveBlogArticles', function (req, res) {
-
-    console.log('Got POST req on', req.url);
-    console.log(req.body);
-
-    var post = new PostData(req.body);
-
-    post.save();
-
-    res.end()
-
-});
-
-app.get('/*', function (req, res) {
-
-    console.log('Got new request at', req.url);
-
-    var adr = req.url.slice(1);
-    
-    if (adr == 'Blog'){
-        PostData.find(function (err, posts) {
-            res.render(adr, {posts: posts})
-    
-        });
-    
-        console.log(adr)
-    } else {
-        res.render(adr);
-    }
-
-    PostData.find().then(function (item) {
-       item.forEach(function (i) {
-           console.log(i.title, i.date, i.text)
-       }) 
-    });
-    
-    res.end();
-});
+require('./routes')(app);
 
 app.listen(3033);
 

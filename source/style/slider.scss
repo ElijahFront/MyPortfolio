@@ -20,7 +20,7 @@ $transitionDuration : 300ms;
 
 
 .btn-down .slider__pict{
-  transform: translate(-50%, -155%);
+  transform: translate(-50%, -195%);
   &.slider__pict_to-down{
     transform: translateY(155%);
     transition: transform $transitionDuration linear;

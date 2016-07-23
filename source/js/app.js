@@ -376,29 +376,40 @@ $(window).on('mousemove', function(e){
 
 (function Login() {
 
-    function sendXHR(){
-        var xhr = new XMLHttpRequest();
-        var data = {
-            login: $('.input-log').val(),
-            password: $('.input-password').val()
-        };
-
-        xhr.open('POST', '/login');
-        xhr.setRequestHeader('Content-type', 'application/json; charset:utf-8');
-        xhr.send(JSON.stringify(data))
+    function sendLoginXHR(data, url){
+        $.ajax({
+            type: 'POST',
+            data:data,
+            url:url,
+            statusCode: {
+                200: function () {
+                    window.location.href = '/admin'
+                },
+                403: function () {
+                    alert('Access not permitted')
+                }
+            }
+        })
     }
 
     $('.btn-enter').on('click', function (e) {
         e.preventDefault();
         
-        var form = $('.login__form');
-        var login = form.find('.input-log');
-        var pass = form.find('.input-password');
-
-        if (login.val() == '' || pass.val() == ''){
+        var login = $('.input-log').val(),
+            pass = $('.input-password').val(),
+            check = $('#human').prop('checked'),
+            radio = $('#y-rob').prop('checked');
+        
+        var data = {
+            login: login,
+            password: pass
+        };
+        if (!check || !radio){
+            alert('Роботам тут не место!')
+        } else if (login == '' || pass == ''){
             $('.alert').show();
         } else {
-            sendXHR();
+            sendLoginXHR(data, '/login');
         }
     })
 
@@ -496,4 +507,27 @@ $(window).on('mousemove', function(e){
         
     })
 
+}());
+
+/*
+* logout
+ */
+
+(function () {
+    
+    $('#logout').on('click', function (e) {
+        
+        e.preventDefault();
+        
+        $.ajax({
+            url:'/logout',
+            type:'POST',
+            statusCode:{
+                200:function () {
+                    window.location.href = '/'
+                }
+            }
+        })
+    })
+    
 }());
