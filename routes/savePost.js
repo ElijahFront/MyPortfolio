@@ -10,4 +10,4 @@ exports.post = function (req, res) {
     post.save();
 
     res.end()
-}
+};

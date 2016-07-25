@@ -1,11 +1,11 @@
 .admin__main.admin__main_3
-    h2.admin__page.admin__page_about Страница "Блог"
+    h2.admin__page.admin__page_about Страница "Мои работы"
 
     .admin__blog_form-wrapper
         h3.admin__skill_header Добавить работу
-        form(name="admin_blog", enctype="multipart/form-data").admin__blog_form
-            input(type="text", placeholder="Название проекта").admin__blog_form-title.admin__blog_form-inp
-            input(type="text", placeholder="Технологии").admin__blog_form-date.admin__blog_form-inp
+        form(name="admin_blog", enctype="multipart/form-data").admin__blog_form#works_form
+            input(type="text", placeholder="Название проекта", name="work__project-name").admin__blog_form-title.admin__blog_form-inp
+            input(type="text", placeholder="Технологии", name="work__project-techs").admin__blog_form-date.admin__blog_form-inp
             input(type="file", name="uploadWorkImg").admin__blog_form-picture
 
-            input(type="submit", value="Добавить").admin__save
+            input(type="submit", value="Добавить").admin__save#save_work

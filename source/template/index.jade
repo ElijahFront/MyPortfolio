@@ -101,7 +101,7 @@ html.index-html(lang='ru-RU')
         .input-wrapper.input-wrapper-login
           input(type='text', class='inp input-log', placeholder='Логин', required)
         .input-wrapper.input-wrapper-password
-          input(type='text', class='inp input-password', placeholder='Пароль', required)
+          input(type='password', class='inp input-password', placeholder='Пароль', required)
         label.login__form_label.login__form_label-check
           input(type='checkbox', class='human-check' id='human', required)
           span.login__form_label-text.form__label_check-text Я человек
@@ -122,10 +122,3 @@ html.index-html(lang='ru-RU')
 
     div.copy
       span.copyright © Илья Сметанин | создано с любовью в LoftSchool | 2016
-
-    //
-      script(src='./assets/js/parallax.min.js')
-      script.
-
-        var scene = document.getElementById('scene');
-        var parallax = new Parallax(scene);

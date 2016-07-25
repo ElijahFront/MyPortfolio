@@ -9,6 +9,7 @@ var cookieParser = require('cookie-parser');
 var session = require('express-session');
 var MongoStore = require('connect-mongo')(session);
 var nconf = require('nconf');
+var multer  = require('multer');
 
 nconf.argv()
     .env()

@@ -103,16 +103,17 @@ html(lang='ru-RU')
         aside.blog__themes
             //.blog__list_wrapper
             ul.blog__list
-                li.blog__list_item.blog__list_item
-                    a(href='#').blog__list_item-link.blog__list_item-link-active Flexbox
-                li.blog__list_item
-                    a(href='#').blog__list_item-link Пакуем как боги
-                li.blog__list_item
-                    a(href='#').blog__list_item-link Предзагрузка ресурсов в HTML5
-                li.blog__list_item
-                    a(href='#').blog__list_item-link localForage: улучшенное офлайн-хранилище
-                li.blog__list_item
-                    a(href='#').blog__list_item-link То, что действительно важно: ориентация на критичные задачи
+                each post in posts
+                    li.blog__list_item.blog__list_item
+                        a(href='#').blog__list_item-link.blog__list_item-link-active #{post.title}
+                    //li.blog__list_item
+                    //    a(href='#').blog__list_item-link Пакуем как боги
+                    //li.blog__list_item
+                    //    a(href='#').blog__list_item-link Предзагрузка ресурсов в HTML5
+                    //li.blog__list_item
+                    //    a(href='#').blog__list_item-link localForage: улучшенное офлайн-хранилище
+                    //li.blog__list_item
+                    //    a(href='#').blog__list_item-link То, что действительно важно: ориентация на критичные задачи
 
         .blog__content
             each post in posts

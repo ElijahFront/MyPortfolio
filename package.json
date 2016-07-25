@@ -23,6 +23,7 @@
     "gulp.spritesmith": "^6.2.1",
     "mongodb": "^2.2.1",
     "mongoose": "^4.5.4",
+    "multer": "^1.1.0",
     "rimraf": "2.5.2"
   },
   "dependencies": {

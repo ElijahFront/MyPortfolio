@@ -58,18 +58,18 @@ $(window).load(function () {
     });
 
 
-
-  /* Заполнение шкалы скилов
+/* Заполнение шкалы скилов
  var circle = document.getElementById('circle'),
-     btn = document.getElementById('start');
-  btn.onclick = function () {
-    var input = document.getElementById("text").value;
-    var innerInp = (input*314)/100;
-    var strInner = innerInp.toString();
-    console.log(strInner);
-    circle.style.strokeDasharray = strInner + "px 314px";
-  };
-  */
+ btn = document.getElementById('start');
+ btn.onclick = function () {
+ var input = document.getElementById("text").value;
+ var innerInp = (input*314)/100;
+ var strInner = innerInp.toString();
+ console.log(strInner);
+ circle.style.strokeDasharray = strInner + "px 314px";
+ };
+ */
+
 
   //высота блоков на странице About
 
@@ -527,6 +527,29 @@ $(window).on('mousemove', function(e){
                     window.location.href = '/'
                 }
             }
+        })
+    })
+    
+}());
+
+/*
+ * Works saving
+ */
+
+(function () {
+  
+    $('#save_work').on('click', function (e) {
+        
+        e.preventDefault();
+        
+        var worksData = new FormData($('#works_form')[0]);
+
+        $.ajax({
+            type: 'POST',
+            url: '/saveWorks',
+            data: worksData,
+            processData: false,
+            contentType: false
         })
     })
     

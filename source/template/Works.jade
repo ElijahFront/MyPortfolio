@@ -94,26 +94,27 @@ html(lang='ru-RU')
     .slider__wrapper
         .slider__work-description#works-anchor
             ul.slider__description_list
-                li.slider__description_item.active
-                    .slider__work-description_info
-                        h2.name Первый
-                        span.used-technologies HTML5, CSS3, JavaScript
-                        a.visit-site(href='#') Посмотреть сайт
-                li.slider__description_item
-                    .slider__work-description_info
-                        h2.name Второй
-                        span.used-technologies HTML5, CSS3, JavaScript
-                        a.visit-site(href='#') Посмотреть сайт
-                li.slider__description_item
-                    .slider__work-description_info
-                        h2.name Третий
-                        span.used-technologies HTML5, CSS3, JavaScript
-                        a.visit-site(href='#') Посмотреть сайт
-                li.slider__description_item
-                    .slider__work-description_info
-                        h2.name Четвертый
-                        span.used-technologies HTML5, CSS3, JavaScript
-                        a.visit-site(href='#') Посмотреть сайт
+                each work in works
+                    li.slider__description_item.active
+                        .slider__work-description_info
+                            h2.name #{work.title}
+                            span.used-technologies #{work.title}
+                            a.visit-site(href='#') Посмотреть сайт
+                //li.slider__description_item
+                //    .slider__work-description_info
+                //        h2.name Второй
+                //        span.used-technologies HTML5, CSS3, JavaScript
+                //        a.visit-site(href='#') Посмотреть сайт
+                //li.slider__description_item
+                //    .slider__work-description_info
+                //        h2.name Третий
+                //        span.used-technologies HTML5, CSS3, JavaScript
+                //        a.visit-site(href='#') Посмотреть сайт
+                //li.slider__description_item
+                //    .slider__work-description_info
+                //        h2.name Четвертый
+                //        span.used-technologies HTML5, CSS3, JavaScript
+                //        a.visit-site(href='#') Посмотреть сайт
 
         .slider__site-picture
             .slider__picture-wrapper
