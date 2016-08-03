@@ -4,7 +4,7 @@ var Schema = mongoose.Schema;
 
 var worksSchema = new Schema({
     title: String,
-    techs: String,
+    techs: [String],
     picture: String
 });
 

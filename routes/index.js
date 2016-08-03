@@ -2,7 +2,7 @@ var checkAuth = require('./auth');
 var multer  = require('multer');
 var storage = multer.diskStorage({
     destination: function (req, file, cb) {
-        cb(null, './tmp/my-works')
+        cb(null, './build/assets/my-works')
     },
     filename: function (req, file, cb) {
         var name = file.originalname.replace((/\s+/g, ''));

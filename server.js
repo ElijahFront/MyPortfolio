@@ -16,7 +16,7 @@ nconf.argv()
     .file({ file: './config/config.json'});
 
 app.use(bodyParser.urlencoded({
-    extended: true
+    extended: false
 }));
 
 app.use(bodyParser.json());
@@ -39,4 +39,5 @@ app.set('view engine', 'jade');
 require('./routes')(app);
 
 app.listen(3033);
+console.log('Listening at port 3033');
 

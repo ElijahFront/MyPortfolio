@@ -1,8 +1,11 @@
-var WorksData = require('../models/works').Works;
+var Works = require('../models/works').Works;
 
 exports.get = function (req, res) {
-    WorksData.find({}, function (works) {
+    Works.find({}).then(function (works) {
+        console.log(works);
 
         res.render('works', {works: works})
+        
     })
+
 };

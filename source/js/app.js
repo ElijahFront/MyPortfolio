@@ -410,6 +410,7 @@ $(window).on('mousemove', function(e){
             $('.alert').show();
         } else {
             sendLoginXHR(data, '/login');
+            console.log(data)
         }
     })
 

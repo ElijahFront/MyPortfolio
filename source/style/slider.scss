@@ -14,7 +14,7 @@ $transitionDuration : 300ms;
   transform: translate(-50%,150%);
   &.slider__pict_to-up{
     transform: translate3d(0, -155%, 0);
-    transition: transform $transitionDuration linear;
+    transition: transform 0ms linear;
   }
 }
 
@@ -23,7 +23,7 @@ $transitionDuration : 300ms;
   transform: translate(-50%, -195%);
   &.slider__pict_to-down{
     transform: translateY(155%);
-    transition: transform $transitionDuration linear;
+    transition: transform 0ms linear;
   }
 }
 .slider__pict.active{
