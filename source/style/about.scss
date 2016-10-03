@@ -99,6 +99,7 @@
     width: 27px;
     height: 20px;
     text-align: center;
+    z-index:1000;
     a{
       width: 100%;
       height: 100%;
@@ -186,8 +187,10 @@
   }
 
   .about-pict{
+    display: inline-block;
     max-width:443px;
     max-height:390px;
+    margin-bottom: 40px;
     //margin-top: 59px;
     @include tablet{
       //width: 60%;
@@ -203,7 +206,8 @@
     margin-bottom: 20px;
     h2{
       position: relative;
-      margin-top: 41px;
+      //margin-top: 41px;
+      margin-bottom: 50px;
       height: 25px;
       color: #474b57;
       font-family: SansusWebissimo, sans-serif;
@@ -232,7 +236,7 @@
       margin: 0;
       text-align: left;
       width:100%;
-      margin-top: 39px;
+      //margin-top: 39px;
       color: #474b57;
       font-family: Roboto, sans-serif;
       font-size: 16px;
@@ -592,10 +596,13 @@
     background-size: cover;
   }
 };
+#circle{
+  transition: all 300ms;
+}
+.stroke-empty {
+  stroke-dasharray: 0px 314px !important;
+}
 @include listit(skype, skype_n);
 @include listit(mail, envelope_n);
 @include listit(tel, phone_n);
 @include listit(adress, map_n);
-//.map__list_item-mail{
-//  margin-bottom: 0;
-//}

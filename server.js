@@ -11,6 +11,10 @@ var MongoStore = require('connect-mongo')(session);
 var nconf = require('nconf');
 var multer  = require('multer');
 
+var port = process.env.PORT || 3033;
+
+app.set('port', (port));
+
 nconf.argv()
     .env()
     .file({ file: './config/config.json'});
@@ -24,8 +28,8 @@ app.use(bodyParser.json());
 app.use(cookieParser());
 
 app.use(session({
-    secret: nconf.get('session:secret'),
-    cookie: nconf.get('session:cookie'),
+    secret: config.get('session:secret'),
+    cookie: config.get('session:cookie'),
     resave: true, // добавил так как без этого была обибка
     saveUninitialized: true, // это тоже
     store: new MongoStore({ mongooseConnection: mongoose.connection })
@@ -38,6 +42,8 @@ app.set('view engine', 'jade');
 
 require('./routes')(app);
 
-app.listen(3033);
-console.log('Listening at port 3033');
+var server = app.listen(app.get('port'), function () {
+    console.log('Listening at port ' + app.get('port'));
+});
+
 

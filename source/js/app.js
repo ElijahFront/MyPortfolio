@@ -156,7 +156,6 @@ $(window).on('mousemove', function(e){
       MoveX = ((w*0.01) - mouseX)*0.05,
       MoveY = ((h*0.01) - mouseY)*0.05;
 
-      //console.log(mouseX, mouseY + ';;;' + MoveX, MoveY);
 
   $('.mountains').css({
   'transform' : 'translate3d(' + MoveX + 'px, ' + MoveY + 'px, 0)'});  // the main idea is here. it would also be conscious to set varieties out of the 'transform3d' property
@@ -283,32 +282,30 @@ $(window).on('mousemove', function(e){
 (function sticky() {
     var menu = $('.blog__list'),
         articles = $('.content__article');
+    
+    if (articles.length != 0) {
+        $(window).scroll(function () {
+            var wScroll = $(window).scrollTop(),
+                start = $('.blog__content').offset().top;
 
-  $(window).scroll(function() {
-    var wScroll = $(window).scrollTop(),
-        start = $('.blog__content').offset().top;
+            if ($('.blog__themes').hasClass('blog__themes_tapped')) {
 
-      if ($('.blog__themes').hasClass('blog__themes_tapped')){
+            } else {
+                if (wScroll >= start) {
+                    menu.addClass('blog__list_sticky');
+                } else {
+                    menu.removeClass('blog__list_sticky');
+                }
 
-      } else {
-          if (wScroll >= start) {
-          menu.addClass('blog__list_sticky');
-      } else {
-          menu.removeClass('blog__list_sticky');
-      }
-
-          changeActive();
-      }
-
-
-
-
-  });
+                changeActive();
+            }
+        })
+    }
 
     function changeActive() {
         Array.from(articles).forEach(function (item, i) {
 
-            if ($(window).scrollTop() - $(item).offset().top > 8 && $(window).scrollTop() - $(item).offset().top < 200){
+            if ($(window).scrollTop() - $(item).offset().top > 8 && $(window).scrollTop() - $(item).offset().top < 200) {
 
                 $(item).addClass('active-art');
                 var index = $('.active-art').index();
@@ -319,16 +316,17 @@ $(window).on('mousemove', function(e){
                 $(item).removeClass('active-art');
 
             }
-            // if (($(window).scrollTop() + 400) == ($(document).height() - $(window).height())){
-            //     var lastEl = articles.length - 1;
-            //     $(item).eq(lastEl).addClass('active-art');
-            // }
-
-            //console.log($(window).scrollTop()+ ' '+  ($(document).height() - $(window).height()))
         })
     }
+        
 
-}());
+
+
+  
+            
+    
+
+})();
 
 
 /*
@@ -598,3 +596,67 @@ $(window).on('mousemove', function(e){
     })
     
 }());
+
+/*
+ / Smooth scroll
+ */
+
+(function () {
+
+    var works = [$('.arrow a'), $('.arrow-up a'), $('a[href="#info_about_me"]')];
+
+    function scroll(obj) {
+        
+        obj.on('click', function (e) {
+            e.preventDefault();
+            var id = $(this).attr('href'),
+                top = $(id).offset().top;
+
+            $('body, html').animate({scrollTop:top}, 700)
+
+        });
+    }
+    $.each(works, function (i, v) {
+        scroll(v)
+        
+    });
+    //scroll(works)
+})();
+
+/*
+ / Animate skills
+ */
+
+(function () {
+
+    var objects = [$('.front'), $('.back'), $('.workflow')];
+
+    $.each(objects, function (i, val) {
+        val.find('.skills-circle').css('stroke-dasharray', '0px 314px');
+    });
+
+    function beginAnimation(obj) {
+        var top = obj.offset().top,
+            scroll = $(window).scrollTop();
+
+        if (scroll > top - 300){
+            animate(obj.find('.skills-circle'))
+        }
+    }
+    function animate(obj) {
+
+        var stroke = obj.attr('stroke-dasharray');
+        
+        obj.css('stroke-dasharray', stroke);
+
+    }
+    
+    $(window).scroll(function () {
+        $.each(objects, function (i, v) {
+            beginAnimation(v)
+
+        })
+    })
+    
+
+})();

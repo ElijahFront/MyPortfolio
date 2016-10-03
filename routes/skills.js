@@ -2,9 +2,6 @@ var SkillsData = require('../models/skills').Skills;
 
 exports.post = function (req, res, next) {
 
-    console.log('Got POST req on', req.url);
-    console.log(req.body);
-
     SkillsData.findOne({}, function (err, skill) {
         if (err) return next(err);
 

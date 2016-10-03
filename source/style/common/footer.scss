@@ -43,7 +43,7 @@ footer{
     height: 87px;
     flex:1 1 auto;
     flex-wrap: wrap;
-    //justify-content:space-between;
+    justify-content:space-between;
   }
   ul{
     margin: 0;
@@ -92,7 +92,7 @@ footer{
     //display: inline-block;
     min-height: 87px;
     //max-width: 466px;
-    border-right: 1px solid white;
+    //border-right: 1px solid white;
     padding-right: 30px;
     ul{
       margin-bottom: 27px;

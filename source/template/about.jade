@@ -14,7 +14,7 @@ html(lang='ru-RU')
             <polygon points="0,0 0,100 50,100" class="bg__about-triangle bg__about-triangle_left"></polygon>
             </g>
             </svg>
-            section.info-about-me
+            section.info-about-me#info_about_me
                 //.info-about-me__bg
                 h1 Обо мне
                 .info__inner-wrapper
@@ -37,74 +37,65 @@ html(lang='ru-RU')
                             h3 Frontend
                             .diagrams
                                 .dia.html5
-                                    //Разметка для регулировки уровня скила соответственно значению в процентах, указанному в input
+
                                     <svg class="circle" width="120" height="120">
                                     <circle r="50" cx="-60" cy="60"></circle>
-                                    <circle id='circle' class="circle__html5" stroke-dasharray="#{(skills.html*314)/100}px 314px" r="50" cx="-60" cy="60"></circle>
+                                    <circle id='circle' class="circle__html5 skills-circle" stroke-dasharray="#{(skills.html*314)/100}px 314px" r="50" cx="-60" cy="60"></circle>
                                     </svg>
-                                    //input(type='text')#text
-                                    //button(style='width:50px; height:20px')#start
-                                    //img(src='./assets/img/skill-html.png')
                                 .dia.css3
                                     <svg class="circle " width="120" height="120">
                                     <circle r="50" cx="-60" cy="60"></circle>
-                                    <circle id='circle' class="circle__css3" stroke-dasharray="#{(skills.css*314)/100}px 314px" r="50" cx="-60" cy="60"></circle>
+                                    <circle id='circle' class="circle__css3 skills-circle" stroke-dasharray="#{(skills.css*314)/100}px 314px" r="50" cx="-60" cy="60"></circle>
                                     </svg>
-                                    //img(src='./assets/img/skill-css.png')
+
                                 .dia.js
                                     <svg class="circle " width="120" height="120">
                                     <circle r="50" cx="-60" cy="60"></circle>
-                                    <circle id='circle' class="circle__js" stroke-dasharray="#{(skills.js*314)/100}px 314px" r="50" cx="-60" cy="60"></circle>
+                                    <circle id='circle' class="circle__js skills-circle" stroke-dasharray="#{(skills.js*314)/100}px 314px" r="50" cx="-60" cy="60"></circle>
                                     </svg>
-                                    //img(src='./assets/img/skill-css.png')
+
                         .back
                             h3 Backend
                             .diagrams
                                 .dia.php
                                     <svg class="circle" width="120" height="120">
                                     <circle r="50" cx="-60" cy="60"></circle>
-                                    <circle id='circle' class="circle__php" stroke-dasharray="#{(skills.php*314)/100}px 314px" r="50" cx="-60" cy="60"></circle>
+                                    <circle id='circle' class="circle__php skills-circle" stroke-dasharray="#{(skills.php*314)/100}px 314px" r="50" cx="-60" cy="60"></circle>
                                     </svg>
-                                    //img(src='./assets/img/skill-php.png')
-                                //.dia.mysql
-                                //    <svg class="circle" width="120" height="120">
-                                //    <circle r="50" cx="-60" cy="60"></circle>
-                                //    <circle id='circle' class="circle__mysql" stroke-dasharray="#{(skills.node*314)/100}px 314px" r="50" cx="-60" cy="60"></circle>
-                                //    </svg>
-                                //    //img(src='./assets/img/skill-mysql.png')
+
                                 .dia.nodejs
                                     <svg class="circle" width="120" height="120">
                                     <circle r="50" cx="-60" cy="60"></circle>
-                                    <circle id='circle' class="circle__nodejs" stroke-dasharray="#{(skills.node*314)/100}px 314px"  r="50" cx="-60" cy="60"></circle>
+                                    <circle id='circle' class="circle__nodejs skills-circle" stroke-dasharray="#{(skills.node*314)/100}px 314px"  r="50" cx="-60" cy="60"></circle>
                                     </svg>
-                                    //img(src='./assets/img/skill-node.png')
+
                                 .dia.mongo
                                     <svg class="circle" width="120" height="120">
                                     <circle r="50" cx="-60" cy="60"></circle>
-                                    <circle id='circle' class="circle__mongo" stroke-dasharray="#{(skills.mongo*314)/100}px 314px" r="50" cx="-60" cy="60"></circle>
+                                    <circle id='circle' class="circle__mongo skills-circle" stroke-dasharray="#{(skills.mongo*314)/100}px 314px" r="50" cx="-60" cy="60"></circle>
                                     </svg>
-                                    //img(src='./assets/img/skill-mongo.png')
+
                         .workflow
                             h3 WorkFlow
                             .diagrams
                                 .dia.git
                                     <svg class="circle" width="120" height="120">
                                     <circle r="50" cx="-60" cy="60"></circle>
-                                    <circle id='circle' class="circle__git" stroke-dasharray="#{(skills.git*314)/100}px 314px" r="50" cx="-60" cy="60"></circle>
+                                    <circle id='circle' class="circle__git skills-circle" stroke-dasharray="#{(skills.git*314)/100}px 314px" r="50" cx="-60" cy="60"></circle>
                                     </svg>
-                                    //img(src='./assets/img/skill-git.png')
+
                                 .dia.gulp
                                     <svg class="circle" width="120" height="120">
                                     <circle r="50" cx="-60" cy="60"></circle>
-                                    <circle id='circle' class="circle__gulp" stroke-dasharray="#{(skills.gulp*314)/100}px 314px"  r="50" cx="-60" cy="60"></circle>
+                                    <circle id='circle' class="circle__gulp skills-circle" stroke-dasharray="#{(skills.gulp*314)/100}px 314px"  r="50" cx="-60" cy="60"></circle>
                                     </svg>
-                                    //img(src='./assets/img/skill-gulp.png')
+
                                 .dia.bower
                                     <svg class="circle" width="120" height="120">
                                     <circle r="50" cx="-60" cy="60"></circle>
-                                    <circle id='circle' class="circle__bower" stroke-dasharray="#{(skills.bower*314)/100}px 314px"  r="50" cx="-60" cy="60"></circle>
+                                    <circle id='circle' class="circle__bower skills-circle" stroke-dasharray="#{(skills.bower*314)/100}px 314px"  r="50" cx="-60" cy="60"></circle>
                                     </svg>
-                                    //img(src='./assets/img/skill-bower.png')
+
 
 
         section.map

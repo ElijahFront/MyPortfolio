@@ -16,7 +16,7 @@ exports.post = function (req, res, next){
         if (err){
             return next(err)
         } else{
-            console.log(work)
+            //console.log(work)
         }
 
     })
